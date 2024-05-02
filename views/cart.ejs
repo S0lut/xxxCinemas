@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/cart.css">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <header>
+        <h1>Movie Theater Food and Beverages</h1>
+        <a href="/" class="cart-icon">&times;</a>
+    </header>
+
+    <h1>Shopping Cart</h1>
+    
+    <% if (cart.length === 0) { %>
+        <p>Your cart is empty.</p>
+    <% } else { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% cart.forEach(item => { %>
+                    <tr>
+                        <td><%= item.name %></td>
+                        <td>$<%= item.price.toFixed(2) %></td>
+                        <td>
+                            <form action="/cart/update_quantity/<%= item._id %>" method="POST">
+                                <input type="number" name="quantity" value="<%= item.quantity %>" min="1">
+                                <button type="submit">Update</button>
+                            </form>
+                        </td>
+                        <td>$<%= (item.price * item.quantity).toFixed(2) %></td>
+                        <td>
+                            <form action="/cart/remove_from_cart/<%= item._id %>" method="POST">
+                                <button type="submit">Remove</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } %>
+
+    <% if (cart.length > 0) { %>
+        <div class="cart-buttons">
+            <form action="/cart/clear_cart" method="POST">
+                <button type="submit">Clear Cart</button>
+            </form>
+        </div>
+        <div class="cart-summary">
+            <p>Total Price: $<%= calculateTotalPrice(cart) %></p>
+            <form action="/cart/checkout" method="POST">
+                <input type="hidden" name="totalPrice" value="<%= calculateTotalPrice(cart) %>">
+                <label for="voucherCode">Voucher Code:</label>
+                <input type="text" id="voucherCode" name="voucherCode">
+                <button type="submit">Checkout</button>
+            </form>
+        </div>
+    <% } %>
+
+    <% function calculateTotalPrice(cart) { 
+        let totalPrice = 0;
+        cart.forEach(item => {
+            totalPrice += item.price * item.quantity;
+        });
+        return totalPrice.toFixed(2);
+    } %>
+</body>
+</html>

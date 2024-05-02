@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.exitButton {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    padding-right: 10000px;
+}
+
+.cart-icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    color: white;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+section {
+    flex: 1;
+    margin: 0 10px;
+    max-width: 500px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.menu-item {
+    width: 200px;
+    margin: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.item-details {
+    padding: 10px;
+    text-align: center;
+}
+
+.item-details h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.item-details p {
+    margin: 5px 0;
+}
+
+.add-button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-button:hover {
+    background-color: #0056b3;
+}
+
+.cart-dropdown {
+    display: none;
+    position: fixed;
+    top: 70px; /* Adjust the distance from the top as needed */
+    right: 20px; /* Adjust the distance from the right as needed */
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+#cart-dropdown h2 {
+    margin-top: 0;
+}
+
+#cart-items {
+    padding: 0;
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+#cart-items li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+#cart-items li:last-child {
+    border-bottom: none;
+}
+
+#cart-total {
+    font-weight: bold;
+}
+.cart-icon {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 20px; 
+    right: 20px; 
+    z-index: 999;
+    cursor: pointer;
+    color:whitesmoke;
+}

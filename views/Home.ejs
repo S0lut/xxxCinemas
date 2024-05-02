@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>XXX Cinema</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Sofia">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="icon" href="image/Logo.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+
+<body>
+    <%- include('header') %>
+    <main>
+        <section id="page1">
+            <div class="slide" id="slide1" style="background-image: url(image/Dune.jpg);">
+                <a href="#slide2"><span class="material-symbols-outlined arrow" id="arrowright">expand_more</span></a>
+            </div>
+
+            <div class="slide" id="slide2" style="background-image: url(image/inception.png);">
+                <a href="#slide1"><span class="material-symbols-outlined arrow" id="arrowleft">expand_more</span></a>
+                <a href="#slide3"><span class="material-symbols-outlined arrow" id="arrowright">expand_more</span></a>
+            </div>
+
+            <div class="slide" id="slide3" style="background-image: url(image/godzilla.jpg);">
+                <a href="#slide2"><span class="material-symbols-outlined arrow" id="arrowleft">expand_more</span></a>
+                <a href="#slide4"><span class="material-symbols-outlined arrow" id="arrowright">expand_more</span></a>
+            </div>
+
+            <div class="slide" id="slide4" style="background-image: url(image/hunter.jpg);">
+                <a href="#slide3"><span class="material-symbols-outlined arrow" id="arrowleft">expand_more</span></a>
+            </div>
+        </section>
+
+        <section id="page2">
+            <div id="title2">
+            <h3 data-aos="fade-up" data-aos-duration="1000">Choose Your Movie</h3>    
+            <h4 data-aos="fade-up" data-aos-duration="1000" style="font-size: smaller" >Now Showing</h4>
+            </div>
+
+            <div id="movieSlider">
+                <div class="movieArrow" id="prevMovie"><span class="material-symbols-outlined">keyboard_arrow_left</span></div>
+                <div class="movieArrow" id="nextMovie"><span class="material-symbols-outlined">keyboard_arrow_right</span></div>
+
+                <% movies.forEach(function(movie) { %>
+                    <div class="movieCard" data-aos="zoom-in-right" data-aos-duration="1500" data-aos-delay="150">
+                        <img src="<%= movie.posterUrl %>" alt="<%= movie.title %>" class="moviePoster">
+                        <div class="movieTitle"><%= movie.title %></div>
+                        <a href="/ticket/<%= movie._id %>"><button class="bookNowButton">Book Now</button></a>
+                    </div>
+                <% }); %>
+            </div>
+        </section>
+        <section id="page4">
+            <h1 data-aos="fade-up" data-aos-duration="1200">Promotions</h1>
+            <div class="container" data-aos="fade-up" data-aos-duration="1700">
+                <div class="slider-wrapper">
+                  <button id="prev-slide" class="slide-button material-symbols-rounded">
+                    chevron_left
+                  </button>
+                  <ul class="image-list">
+                    <img class="image-item" src="image/promo3.jpg" alt="img-1" />
+                    <img class="image-item" src="image/promo2.jpg" alt="img-2" />
+                    <img class="image-item" src="image/promo1.jpg" alt="img-3" />
+                    <img class="image-item" src="image/promo4.jpg" alt="img-4" />
+                    <img class="image-item" src="image/promo5.jpg" alt="img-5" />
+                    <img class="image-item" src="image/promo6.jpg" alt="img-6" />
+                  </ul>
+                  <button id="next-slide" class="slide-button material-symbols-rounded">
+                    chevron_right
+                  </button>
+                </div>
+                <div class="slider-scrollbar">
+                  <div class="scrollbar-track">
+                    <div class="scrollbar-thumb"></div>
+                  </div>
+                </div>
+              </div>
+        </section>
+
+    </main>
+
+
+    <script src="/js/index.js"></script>
+
+    <%- include('footer') %>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>XXX Cinema</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Sofia">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="icon" href="image/Logo.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+    <header>    
+        <img src="image/Logo.png">
+        <nav>
+            <ul>
+                <li id="home"><a href="/">HOME</a></li>              
+                <li><a href="/#page4">PROMOTIONS</a></li>
+                <li><a href="Shop">SHOP</a></li>
+                <li><a href="cart">CART</a></li>
+            </ul>
+        </nav>
+        <div class="user-container">
+            <a href="/profile" id="user-button">
+                <img src="image/user.png" alt="User">
+            </a>
+            <div class="user-dropdown" id="login-dropdown">
+                <a href="Signin" id="login-link">Log In</a>
+            </div>
+        </div>
+        <div class="admin-container" <% if (isAdmin) { %> style="display: block;" <% } else { %> style="display: none;" <% } %> >
+            <a href="admin" id="admin-button">
+                <img src="image/adminn-remove.png" alt="Admin">
+            </a> 
+        </div>
+    </header>

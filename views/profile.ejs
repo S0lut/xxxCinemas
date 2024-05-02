@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/profile.css">
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>USER PROFILE</h1>
+
+    <a href="/" class="back-btn">&times;</a>
+
+    <div id="profileContainer">
+        <form id="editForm" action="/updateProfile" method="POST">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" value="<%= user.name %>">
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="New Password">
+            </div>
+            <button type="submit">Save Changes</button>
+        </form>
+
+        <div>
+            <label for="balance">My balance:</label>
+            <span><%= user.balance %></span>
+        </div>
+
+        <div id="myTicketsSection">
+            <% if (user && user.tickets && user.tickets.length > 0) { %>
+                <% let dateTimeMap = {}; %>
+                <% user.tickets.forEach((ticket, index) => { %>
+                    <% let key = ticket.date + ticket.time; %>
+                    <% if (!dateTimeMap[key]) { %>
+                        <% dateTimeMap[key] = []; %>
+                    <% } %>
+                    <% dateTimeMap[key].push(ticket); %>
+                <% }); %>
+                
+                <% Object.keys(dateTimeMap).forEach(dateTimeKey => { %>
+                    <% let tickets = dateTimeMap[dateTimeKey]; %>
+                    <div class="ticket-section">
+                        <h2>Date: <%= tickets[0].date %>, Time: <%= tickets[0].time %></h2>
+                        <% tickets.forEach(ticket => { %>
+                            <div class="ticket">
+                                <div class="tic">
+                                    <div class="barcode">
+                                        <img src="image/barcode.png">
+                                    </div>
+                                    <div class="tic_details" style="background-color: rgb(124, 7, 7);">
+                                        <h5 class="pvr"><span>XXX</span> Cinemas</h5>
+                                        <div class="seat_det">
+                                            <h1 style="color: rgb(210, 17, 210);"><%= ticket.movieTitle %></h1>
+                                        </div>
+                                        <div class="seat_det">
+                                            <div class="seat_cr">
+                                                <h6>Seat Number:</h6>
+                                                <h6><%= ticket.seatNumber %></h6>
+                                            </div>
+                                            <div class="seat_cr">
+                                                <h6>Date:</h6>
+                                                <h6><%= ticket.date %></h6>
+                                            </div>
+                                            <div class="seat_cr">
+                                                <h6>Time:</h6>
+                                                <h6><%= ticket.time %></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </div>
+                <% }); %>
+                
+            <% } else { %>
+                <p>No tickets found.</p>
+            <% } %>
+        </div>
+        <div id="myOrderedItemsSection">
+            <% if (user && user.ordered && user.ordered.length > 0) { %>
+                <h2>Ordered Items</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% user.ordered.forEach((item, index) => { %>
+                            <tr>
+                                <td><%= item.name %></td>
+                                <td><%= item.quantity %></td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <p>No items ordered.</p>
+            <% } %>
+        </div>                    
+    </div>
+    <%- include('footer') %>
+</body>
+</html>

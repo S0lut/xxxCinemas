@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f3f3f3;
+    font-family: Arial, sans-serif;
+}
+
+/* Success message container */
+.success-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .checkmark {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #4caf50;
+        position: relative;
+        animation: scaleUp 0.5s ease forwards;
+    }
+    
+    @keyframes scaleUp {
+        from {
+            transform: scale(0);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+    
+    .checkmark::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 40px;
+        border-width: 0 0 4px 4px;
+        border-color: #fff;
+        border-style: solid;
+        transform: rotate(-45deg);
+        top: 43px;
+        left: 32px;
+        animation: fadeIn 0.5s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+/* Summary container */
+.summary {
+    margin-top: 20px;
+}
+
+.close-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.close-button:hover {
+    background-color: #0056b3;
+}

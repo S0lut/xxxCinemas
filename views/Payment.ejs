@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="/css/paymentstyle.css">
+</head>
+<body>
+    <h1 style="justify-content: center;">Payment Page</h1>
+    <div class="container">
+        <form id="paymentForm" action="/ticket/<%= id %>/process_payment" method="post" style="padding: 20px;">
+            <h2>Ringkasan Pembelian:</h2>
+            <% selectedSeats.forEach(function(seat) { %>
+                <input type="hidden" name="selectedSeats" value='<%= seat %>'>
+            <% }); %>
+            <input type="hidden" name="totalPrice" value="<%= totalPrice %>">
+            <p>Movie Title: <%= selectedTitle %></p>
+            <p>Selected Seats: <%= selectedSeats %></p>
+            <p>Selected Date: <%= selectedDate %></p>
+            <p>Selected Time: <%= selectedTime %></p>
+            <p>Price per ticket: $<%= moviePrice %></p>
+            <p>Total Price: $<span id="totalPrice"><%= totalPrice %></span></p>
+            <label for="voucherCode">Voucher Code (optional):</label>
+            <input type="text" id="voucherCode" name="voucherCode">
+            <button type="submit" id="processPaymentButton">Process Payment</button>
+        </form>
+    </div>
+    <%- include('footer') %>
+</body>
+</html>

@@ -1,0 +1,178 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: #6a0dad;
+}
+
+.back-btn {
+    display: block;
+    text-align: left;
+    margin: 20px;
+    color: #6a0dad;
+    text-decoration: none;
+    font-size: 25px; /* Adjust font size as needed */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+#profileContainer {
+    max-width: 600px; /* Adjust max-width as needed */
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #6a0dad;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #6a0dad;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4b077d;
+}
+
+#myTicketsSection {
+  max-height: 400px; /* Set maximum height for the scrollable area */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.ticket {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.ticket .tic {
+  display: flex;
+  align-items: center;
+}
+
+.ticket .tic .barcode {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.ticket .tic .barcode img {
+  width: 100px; /* Adjust barcode image width */
+  margin-right: 10px;
+  height: 100%;
+}
+
+.ticket .tic .barcode .card {
+  width: 100px; /* Adjust card width */
+  height: 60px; /* Adjust card height */
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ticket .tic .tic_details {
+  flex: 2;
+  padding-left: 10px;
+}
+
+.ticket .tic .tic_details .pvr {
+  margin-top: 0;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.ticket .tic .tic_details .seat_det {
+  margin-bottom: 5px;
+}
+
+.ticket .tic .tic_details .seat_cr {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Adjust font styles as needed */
+.ticket h1, .ticket h3, .ticket h5, .ticket h6 {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: whitesmoke;
+}
+
+/* Styling for scrollbar */
+#myTicketsSection::-webkit-scrollbar {
+  width: 8px;
+}
+
+#myTicketsSection::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+#myTicketsSection::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+#myOrderedItemsSection {
+  margin-top: 20px;
+}
+
+#myOrderedItemsSection h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#myOrderedItemsSection table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#myOrderedItemsSection th, #myOrderedItemsSection td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+#myOrderedItemsSection th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+#myOrderedItemsSection tr:hover {
+  background-color: #f5f5f5;
+}

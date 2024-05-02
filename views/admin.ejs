@@ -1,0 +1,394 @@
+<!-- views/admin.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" type="text/css" href="/css/adminstyle.css">
+</head>
+<body>
+    <h1>Database Admin Panel</h1>
+    <div class="The_Box">
+        <div class="sidebar">
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="#" onclick="showSection('create-movie')">Create Movie</a></li>
+                <li><a href="#" onclick="showSection('edit-movie')">Edit Movie</a></li>
+                <li><a href="#" onclick="showSection('create-product')">Create Product</a></li>
+                <li><a href="#" onclick="showSection('edit-product')">Edit Product</a></li>
+                <li><a href="#" onclick="showSection('edit-user')">Edit Users</a></li>
+                <li><a href='#' onclick="showSection('create-voucher')">Create Voucher</a></li>
+                <li><a href='#' onclick="showSection('edit-voucher')">Edit Voucher</a></li>
+            </ul>
+        </div>
+        <div class="content" id="create-movie">
+            <h2>Create Movie</h2>
+            <form action="/admin/create" method="POST">
+                <label>Title: <input type="text" name="title"></label>
+                <label>Poster URL: <input type="text" name="posterUrl"></label>
+                <label>Genre: <input type="text" name="genre"></label>
+                <label>Age Rating: <input type="text" name="ageRating"></label>
+                <label>Runtime: <input type="number" name="runtime"></label>
+                <label>Director: <input type="text" name="director"></label>
+                <label>Price: <input type="number" name="price"></label>
+                <label>Number of Seats: <input type="number" name="numSeats"></label>
+                <label>Date: <input type="date" name="date"></label>
+                <label>Time: <input type="time" name="time"></label>
+                <br></br>
+                <button type="submit">Create Movie</button>
+            </form>
+        </div>
+        <div class="content" id="edit-movie">
+            <h2>Edit Movie</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Poster</th>
+                        <th>Genre</th>
+                        <th>Age Rating</th>
+                        <th>Runtime</th>
+                        <th>Director</th>
+                        <th>Dates</th>
+                        <th>Times</th>
+                        <th>Price</th>
+                        <th>Seats</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% movies.forEach(movie => { %>
+                        <tr id="movieRow_<%= movie._id %>">
+                            <td><%= movie.title %></td>
+                            <td><img src="<%= movie.posterUrl %>"></td>
+                            <td><%= movie.genre %></td>
+                            <td><%= movie.ageRating %></td>
+                            <td><%= movie.runtime %></td>
+                            <td><%= movie.director %></td>
+                            <td><%= movie.date %></td>
+                            <td><%= movie.time %></td>
+                            <td><%= movie.price %>$</td>
+                            <td><%= movie.seats.length %></td>
+                            <td>
+                                <button type="submit" style="background-color: green;" onclick="openEditModal('<%=movie._id%>')">Edit</button>
+                                <form method="POST" action="/admin/delete/<%= movie._id %>" style="display: inline;">
+                                    <button type="submit" style="background-color: red;">Delete</button>
+                                </form>
+                            </td>
+                            </form>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+            <%movies.forEach(movie =>{%>
+                <div id="editMovieModal_<%= movie._id %>" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeEditModal()">&times;</span>
+                        <form id="editForm" action="/admin/edit/<%= movie._id %>" method="POST">
+                            <label>Title: <input type="text" name="title" value="<%= movie.title %>" required></label>
+                            <label>Poster URL: <input type="text" name="posterUrl" value="<%= movie.posterUrl %>" required></label>
+                            <label>Genre: <input type="text" name="genre" value="<%= movie.genre %>" required></label>
+                            <label>Age Rating: <input type="text" name="ageRating" value="<%= movie.ageRating %>" required></label>
+                            <label>Runtime: <input type="number" name="runtime" value="<%= movie.runtime %>" required></label>
+                            <label>Director: <input type="text" name="director" value="<%= movie.director %>" required></label>
+                            <label>Price: <input type="number" name="price" value="<%= movie.price %>" required></label>
+                            <label>Number of Seats: <input type="number" name="numSeats" value="<%= movie.seats.length %>" required></label>
+                            <label>Date: <input type="date" name="date" value="<%= movie.date %>" required></label>
+                            <label>Time: <input type="time" name="time" value="<%= movie.time %>" required></label>
+                            <br></br>
+                            <button type="submit">Edit Movie</button>
+                        </form>
+                    </div>                                                                
+                </div>
+                <% }); %>
+            </div>
+            <div class="content" id="create-product">
+                <form action="/admin/add-product" method="post">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required><br><br>
+                    <label for="desc">Description:</label>
+                    <textarea id="desc" name="desc" required></textarea><br><br>
+                    <label for="img">Image URL:</label>
+                    <input type="text" id="img" name="img" required><br><br>
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" name="price" step="0.01" required><br><br>
+                    <label for="type">Type:</label>
+                    <select id="type" name="type" required>
+                        <option value="food">Food</option>
+                        <option value="beverage">Beverage</option>
+                    </select><br><br>
+                    <button type="submit">Add Product</button>
+                </form>
+            </div>
+            <div class="content" id="edit-product">
+                <h2>Edit Product</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Image</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Type</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% products.forEach(product => { %>
+                            <tr id="productRow_<%= product._id %>">
+                                <td><%= product.title %></td>
+                                <td><img src="<%= product.img %>"></td>
+                                <td><%= product.desc%></td>
+                                <td>$<%= product.price %></td>
+                                <td><%= product.type %></td>
+                                <td>
+                                    <button type="button" style="background-color: blue;" onclick="openEditProductModal('<%= product._id %>')">Edit</button>
+                                    <!-- Delete form -->
+                                    <form method="POST" action="/admin/delete-product/<%= product._id %>" style="display: inline;">
+                                        <button type="submit" style="background-color: red;">Delete</button>
+                                    </form>
+                                </td>
+                                </form>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+    
+                <% products.forEach(product => { %>
+                    <div id="editProductModal_<%= product._id %>" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeEditProductModal('<%= product._id %>')">&times;</span>
+                            <form id="editProductForm_<%= product._id %>" action="/admin/update-product/<%= product._id %>" method="POST">
+                                <label for="edit-title">Title:</label>
+                                <input type="text" id="edit-title" name="title" value="<%= product.title %>" required><br><br>
+                                <label for="edit-desc">Description:</label>
+                                <textarea id="edit-desc" name="desc" value="<%= product.desc %>"required></textarea><br><br>
+                                <label for="edit-img">Image URL:</label>
+                                <input type="text" id="img" name="img" value="<%= product.img %>"><br><br>
+                                <label for="edit-price">Price:</label>
+                                <input type="number" id="edit-price" name="price" step="0.01" value="<%= product.price%>" required><br><br>
+                                <label for="edit-type">Type:</label>
+                                <select id="edit-type" name="type" value="<%= product.type %><"required>
+                                    <option value="food">Food</option>
+                                    <option value="beverage">Beverage</option>
+                                </select><br></br>
+                                <button type="submit">Save Changes</button>
+                            </form>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+            <div class="content" id ="edit-user">
+                <h2>Edit Users</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>isAdmin</th>
+                            <th>Balance</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% users.forEach(user => { %>
+                            <tr id="userRow_<%= user._id %>">
+                                <td><%= user.name %></td>
+                                <td><%= user.email %></td>
+                                <td><%= user.isAdmin %></td>
+                                <td>Rp.<%= user.balance %></td>
+                                <td>
+                                    <button type="submit" style="background-color: green;" onclick="openEditUserModal('<%=user._id%>')">Edit</button>
+                                    <form method="POST" action="/admin/user-delete/<%= user._id %>" style="display: inline;">
+                                        <button type="submit" style="background-color: red;">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <div id="editUserModal_<%= user._id %>" class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="closeUserModal('<%= user._id %>')">&times;</span>
+                                    <form id="editUserForm_<%= user._id %>" action="/admin/user-edit/<%= user._id %>" method="POST">
+                                        <label for="edit-name">Name:</label>
+                                        <input type="text" id="edit-name" name="name" value="<%=user.name%>" required><br><br>
+                                        <label for="edit-email">email:</label>
+                                        <input type="text" id="edit-email" name="email" value="<%=user.email%>"required></input><br><br>
+                                        <label for = "edit-balance">balance:</label>
+                                        <input type="number" id ="edit-balance" name="balance" value="<%=user.balance%>"required><br></br>
+                                        <label for="edit-admin">admin:</label>
+                                        <select id="edit-type" name="type" value ="<%=user.isAdmin%>"required>
+                                            <option value="true">admin</option>
+                                            <option value="false">not admin</option>
+                                        </select><br></br>
+                                        <button type="submit">Save Changes</button>
+                                    </form>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="content" id="create-voucher">
+                <h1>Create New Voucher</h1>
+                <form action="/admin/create-voucher" method="POST">
+                    <label for="code">Voucher Code:</label>
+                    <input type="text" id="code" name="code" required>
+                    <br>
+                    <label for="discount_type">Discount Type:</label>
+                    <select id="discount_type" name="discount_type" required>
+                        <option value="percentage">Percentage</option>
+                        <option value="fixed_amount">Fixed Amount</option>
+                    </select>
+                    <br>
+                    <label for="discount_value">Discount Value:</label>
+                    <input type="number" id="discount_value" name="discount_value" required>
+                    <br>
+                    <label for="expiry_date">Expiry Date:</label>
+                    <input type="date" id="expiry_date" name="expiry_date" required>
+                    <br>
+                    <label for="usage_limit">Usage Limit:</label>
+                    <input type="number" id="usage_limit" name="usage_limit" required>
+                    <br>
+                    <button type="submit">Create Voucher</button>
+                </form>
+            </div>
+            <div class="content" id="edit-voucher">
+                <h2>Edit Vouchers</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Discount Type</th>
+                            <th>Discount Value</th>
+                            <th>Expiry Date</th>
+                            <th>Usage Limit</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% voucher.forEach(voucher => { %>
+                            <tr id="voucherRow_<%= voucher._id %>">
+                                <td><%= voucher.code %></td>
+                                <td><%= voucher.discount_type %></td>
+                                <td><%= voucher.discount_value %></td>
+                                <td><%= voucher.expiry_date %></td>
+                                <td><%= voucher.usage_limit %></td>
+                                <td>
+                                    <button type="submit" style="background-color: green;" onclick="openEditVoucherModal('<%= voucher._id %>')">Edit</button>
+                                    <form method="post" action="/admin/delete-voucher/<%=voucher._id%>" style="display: inline;">
+                                        <button type="submit" style="background-color: red;">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <div id="editVoucherModal_<%=voucher._id%>" class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="closeVoucherModal('<%= voucher._id %>')">&times;</span>
+                                    <form id="editVoucherForm_<%= voucher._id %>" action="/admin/edit-voucher/<%= voucher._id %>" method="post">
+                                        <label for="edit-code">Code:</label>
+                                        <input type="text" id="edit-code" name="code" value="<%= voucher.code %>" required><br><br>
+                                        <label for="edit-discount_type">Discount Type:</label>
+                                        <input type="text" id="edit-discount_type" name="discount_type" value="<%= voucher.discount_type %>" required><br><br>
+                                        <label for="edit-discount_value">Discount Value:</label>
+                                        <input type="number" id="edit-discount_value" name="discount_value" value="<%= voucher.discount_value %>" required><br><br>
+                                        <label for="edit-expiry_date">Expiry Date:</label>
+                                        <input type="date" id="edit-expiry_date" name="expiry_date" value="<%= voucher.expiry_date %>" required><br><br>
+                                        <label for="edit-usage_limit">Usage Limit:</label>
+                                        <input type="number" id="edit-usage_limit" name="usage_limit" value="<%= voucher.usage_limit %>" required><br><br>
+                                        <button type="submit">Save Changes</button>
+                                    </form>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        const editModal = document.getElementById("editMovieModal");
+        const editBtn = document.getElementById("openEditModalBtn");
+
+        // Get the <span> element that closes the modal
+        const editSpan = document.getElementsByClassName("close")[0];
+
+        // Function to open the edit modal
+        function openEditModal(movieId) {
+            const editModal = document.getElementById(`editMovieModal_${movieId}`);
+            editModal.style.display = "block";
+        }
+
+        function closeEditModal(movieId) {
+            if (movieId) {
+                const editModal = document.getElementById(`editMovieModal_${movieId}`);
+                editModal.style.display = "none";
+            } else {
+                // Close any open modal if movieId is not provided
+                const openModals = document.querySelectorAll('.modal');
+                openModals.forEach(modal => {
+                    modal.style.display = 'none';
+                });
+            }
+        }
+        function openEditVoucherModal(voucherId) {
+            const modal = document.getElementById(`editVoucherModal_${voucherId}`);
+            if (modal) {
+                modal.style.display = "block";
+            } else {
+                console.error(`Modal with ID editVoucherModal_${voucherId} not found.`);
+            }
+        }
+
+        function closeVoucherModal(voucherId) {
+            const modal = document.getElementById(`editVoucherModal_${voucherId}`);
+            if (modal) {
+                modal.style.display = "none";
+            } else {
+                console.error(`Modal with ID editVoucherModal_${voucherId} not found.`);
+            }
+        }
+        function openEditProductModal(productId) {
+            const modal = document.getElementById(`editProductModal_${productId}`);
+            modal.style.display = "block";
+        }
+
+        function openEditUserModal(userId) {
+            const modal = document.getElementById(`editUserModal_${userId}`);
+            if (modal) {
+                modal.style.display = "block";
+            } else {
+                console.error(`Modal with ID editUserModal_${userId} not found.`);
+            }
+        }
+
+
+        // Function to close the edit product modal
+        function closeEditProductModal(productId) {
+            const modal = document.getElementById(`editProductModal_${productId}`);
+            modal.style.display = "none";
+        }
+        function closeUserModal(userId) {
+            const modal = document.getElementById(`editUserModal_${userId}`);
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == editModal) {
+                editModal.style.display = "none";
+            }
+        }
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content');
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                        section.style.display = 'block';
+                } else {
+                        section.style.display = 'none';
+                }
+            });
+        }
+        showSection("create-movie");
+    </script>
+    <%- include('footer') %>
+</body>
+</html>
