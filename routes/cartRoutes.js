@@ -117,6 +117,8 @@ router.post('/checkout', async (req, res) => {
         }
 
         const user = await UserModel.findOne({ name: username });
+        const admin = await UserModel.findOne({ name: 'admin' });
+
 
         if (!user) {
             return res.redirect('/Signin');
@@ -166,10 +168,10 @@ router.post('/checkout', async (req, res) => {
 
         // Reduce user's balance
         user.balance -= finalTotalPrice;
-
+        admin.balance += finalTotalPrice;
         // Save the changes
         await user.save();
-
+        await admin.save();
         res.render('success', {
             finalTotalPrice: user.balance,
         });

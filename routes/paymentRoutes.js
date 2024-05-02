@@ -66,7 +66,9 @@ router.post('/:movieId/process_payment', async (req, res) => {
         }
 
         const user = await UserModel.findOne({ name: username });
+        const admin = await UserModel.findOne({ name: "admin" }); // Find admin user
         const movieData = await MovieModel.findById(req.params.movieId);
+        
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }
@@ -79,7 +81,7 @@ router.post('/:movieId/process_payment', async (req, res) => {
 
         // Check if voucher code is provided and not empty
         if (voucherCode && voucherCode.trim() !== '') {
-            const voucher = await VoucherModel.findOne({ code: voucherCode }); // Use VoucherModel here
+            const voucher = await VoucherModel.findOne({ code: voucherCode });
             if (!voucher) {
                 return res.status(404).json({ message: "Voucher not found" });
             }
@@ -97,9 +99,12 @@ router.post('/:movieId/process_payment', async (req, res) => {
         if (user.balance < finalTotalPrice) {
             return res.status(400).json({ message: "Insufficient balance" });
         }
-        console.log(finalTotalPrice);
-        // Reduce user's balance
+
+        // Deduct from user's balance
         user.balance -= finalTotalPrice;
+
+        // Add deducted amount to admin's balance
+        admin.balance += finalTotalPrice;
 
         // Mark the corresponding seats as booked in the movie schema
         seatsArray.forEach(seatIndex => {
@@ -117,13 +122,15 @@ router.post('/:movieId/process_payment', async (req, res) => {
                 time: movieData.time
             });
         });
-        // Save updated user and movie data
+
+        // Save updated user, admin, and movie data
         await user.save();
+        await admin.save(); // Save admin's balance update
         await movieData.save();
 
         // Return success response
         res.render('success', {
-            finalTotalPrice: user.balance,
+            finalTotalPrice: user.balance, // Assuming you want to display user's remaining balance
             selectedSeats: seatsArray
         });
 
@@ -132,7 +139,5 @@ router.post('/:movieId/process_payment', async (req, res) => {
         res.status(500).json({ message: "Internal server error" });
     }
 });
-
-
 
 module.exports = router;

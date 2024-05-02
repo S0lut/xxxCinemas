@@ -121,7 +121,7 @@ router.post('/create', async (req, res) => {
     }
   });
 
-  router.delete('/delete-product/:id', async (req, res) => {
+  router.post('/delete-product/:id', async (req, res) => {
     try {
         const productId = req.params.id;
         await ProductModel.findByIdAndDelete(productId);
