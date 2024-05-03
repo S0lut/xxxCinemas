@@ -11,6 +11,9 @@ const paymentRoutes = require('./routes/paymentRoutes');
 const shopRoutes = require('./routes/shopRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 const cookieParser = require('cookie-parser');
+const flash = require('connect-flash');
+const session = require('express-session');
+
 
 
 mongoose.connect('mongodb://localhost:27017')
@@ -19,6 +22,9 @@ mongoose.connect('mongodb://localhost:27017')
 
 
 const port = 3000;
+
+app.use(flash())
+
 app.set('view engine', 'ejs');
 
 app.use(express.static('./public'));
@@ -31,17 +37,26 @@ app.use('/api/movies', adminRoutes);
 
 app.use(cookieParser());
 
+app.use(session({
+  secret: 'supanika',
+  resave: false,
+  saveUninitialized: true
+}));
+
+
 // Signin route
 app.post("/Signin", async (req, res) => {
   try {
       const user = await collection.findOne({ name: req.body.username});
       if (!user) {
-          return res.status(404).send("User not found");
+        req.flash('error', 'Username does not exist');
+        return res.redirect('/Signin');
       }
 
       const isPasswordMatch = await bcrypt.compare(req.body.password, user.password);
       if (!isPasswordMatch) {
-          return res.status(401).send("Incorrect password");
+        req.flash('error', 'Your password is incorrect, please try again');
+        return res.redirect('/Signin');
       }
 
       // Set the dropdown content to the user's name
@@ -67,7 +82,8 @@ app.post("/Signup", async (req, res) => {
   
       const existingUser = await collection.findOne({ name: data.name });
       if (existingUser) {
-          return res.status(400).send('User already exists. Please choose a different username.');
+        req.flash('error', 'A user with that username already exists');
+        return res.redirect('/Signup');
       }
   
       const saltRounds = 10;
@@ -175,11 +191,11 @@ app.post("/updateProfile", async (req, res) => {
 });
 
 app.get('/Signup', (req, res) => {
-  res.render('Signup');
+  res.render('Signup',{messages: req.flash()} );
 });
 
 app.get('/Signin', (req, res) => {
-  res.render('Signin');
+  res.render('Signin', {messages: req.flash()});
 });
 
 app.use('/ticket',paymentRoutes);

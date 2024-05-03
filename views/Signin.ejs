@@ -20,6 +20,11 @@
                     <i class="fas fa-lock"></i>
                     <input type="password" name="password" id="password" placeholder="Password">
                 </div>
+                <% if (messages.error) { %>
+                    <p class="error" style="color:red">
+                        <%= messages.error %>
+                    </p>
+                <% } %>
                 <input type="submit" value="Login" class="btn">
                 <p class="social-text">Or Sign in with social platform</p>
                 <div class="social-media">
