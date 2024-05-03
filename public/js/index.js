@@ -185,31 +185,56 @@ const initSlider = () => {
 window.addEventListener("resize", initSlider);
 window.addEventListener("load", initSlider);
 
+
 window.addEventListener('DOMContentLoaded', async () => {
     const username = getCookie("username");
-    const balance = getCookie("balance"); // Ambil nilai saldo dari cookie
+    let balance = getCookie("balance"); 
     const loginDropdown = document.getElementById("login-dropdown");
+
+    
+    async function fetchAndUpdateBalance() {
+        try {
+            const response = await fetch("/api/user/balance", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            if (response.ok) {
+                const data = await response.json();
+                balance = data.balance;
+                setBalanceCookie(balance);
+            } else {
+                console.error("Failed to fetch user balance");
+            }
+        } catch (error) {
+            console.error("Error fetching user balance:", error);
+        }
+    }
+
     if (username) {
         try {
-            // Jika pengguna sudah masuk, tampilkan salam, saldo, dan tombol logout
-            const balanceText = balance ? `<div>Balance: ${balance}</div>` : '';
-            loginDropdown.innerHTML = `<span>Hi, ${username}</span>${balanceText}<a href="#" id="logout-link">Log Out</a>`;
+            
+            const balanceText = balance ? `<div id="balance">Balance: ${balance}</div>` : '';
+            loginDropdown.innerHTML = `<span>Hi, ${username}<br><a href="#" id="logout-link">Log Out</a>`;
             document.getElementById("logout-link").addEventListener("click", () => {
                 document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                 document.cookie = "balance=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                 document.cookie = "isAdmin=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                location.href = "/"; // Redirect ke halaman awal
+                location.href = "/"; 
             });
+            await fetchAndUpdateBalance(); // Fetch and update the balance when the page is loaded
         } catch (error) {
             console.error('Error fetching user balance:', error);
         }
     } else {
-        // Jika belum masuk, tampilkan tautan masuk
+        // If not logged in, display login link
         loginDropdown.innerHTML = `<a href="Signin" id="login-link">Log In</a>`;
     }
+
 });
 
-// Fungsi untuk mendapatkan nilai cookie
+// Function to get the value of a cookie
 function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);

@@ -42,6 +42,7 @@
         </div>
         <div class="content" id="edit-movie">
             <h2>Edit Movie</h2>
+            <button id="sortBtnMovies" onclick="toggleSortOrderMovies()">Sort A-Z</button>
             <table>
                 <thead>
                     <tr>
@@ -58,7 +59,7 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody data-sort-order="asc">
                     <% movies.forEach(movie => { %>
                         <tr id="movieRow_<%= movie._id %>">
                             <td><%= movie.title %></td>
@@ -124,6 +125,7 @@
             </div>
             <div class="content" id="edit-product">
                 <h2>Edit Product</h2>
+                <button id="sortBtnProducts" onclick="toggleSortOrderProducts()">Sort A-Z</button>
                 <table>
                     <thead>
                         <tr>
@@ -135,7 +137,7 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody data-sort-order="asc">
                         <% products.forEach(product => { %>
                             <tr id="productRow_<%= product._id %>">
                                 <td><%= product.title %></td>
@@ -182,6 +184,7 @@
             </div>
             <div class="content" id ="edit-user">
                 <h2>Edit Users</h2>
+                <button id="sortBtnUsers" onclick="toggleSortOrderUsers()">Sort A-Z</button>
                 <table>
                     <thead>
                         <tr>
@@ -198,7 +201,7 @@
                                 <td><%= user.name %></td>
                                 <td><%= user.email %></td>
                                 <td><%= user.isAdmin %></td>
-                                <td>$.<%= user.balance %></td>
+                                <td>Rp.<%= user.balance %></td>
                                 <td>
                                     <button type="submit" style="background-color: green;" onclick="openEditUserModal('<%=user._id%>')">Edit</button>
                                     <form method="POST" action="/admin/user-delete/<%= user._id %>" style="display: inline;">
@@ -255,6 +258,7 @@
             </div>
             <div class="content" id="edit-voucher">
                 <h2>Edit Vouchers</h2>
+                <button id="sortBtnVouchers" onclick="toggleSortOrderVouchers()">Sort A-Z</button>
                 <table>
                     <thead>
                         <tr>
@@ -266,7 +270,7 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody data-sort-order="asc">
                         <% voucher.forEach(voucher => { %>
                             <tr id="voucherRow_<%= voucher._id %>">
                                 <td><%= voucher.code %></td>
@@ -388,6 +392,121 @@
             });
         }
         showSection("create-movie");
+        let ascendingOrder = true; // Flag to keep track of sorting order
+        let ascendingOrderProducts = true;
+        let ascendingOrderUsers = true;
+        let ascendingOrderVouchers = true;
+        let ascendingOrderMovies = true;
+
+          // Function to toggle sort order for movies
+          function toggleSortOrderMovies() {
+    const tbody = document.querySelector('#edit-movie tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+
+    // Toggle sorting order based on the current state
+    const ascendingOrder = tbody.dataset.sortOrder === 'asc';
+    tbody.dataset.sortOrder = ascendingOrder ? 'desc' : 'asc';
+
+    rows.sort((rowA, rowB) => {
+        const titleA = rowA.cells[0].textContent.trim();
+        const titleB = rowB.cells[0].textContent.trim();
+        // Use localeCompare based on the sorting order
+        return ascendingOrder ? titleA.localeCompare(titleB) : titleB.localeCompare(titleA);
+    });
+
+    tbody.innerHTML = '';
+
+    rows.forEach(row => {
+        tbody.appendChild(row);
+    });
+
+    updateSortButtonText('sortBtnMovies');
+}
+
+    // Function to toggle sort order for products
+    function toggleSortOrderProducts() {
+    const tbody = document.querySelector('#edit-product tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+
+    // Toggle sorting order based on the current state
+    const ascendingOrder = tbody.dataset.sortOrder === 'asc';
+    tbody.dataset.sortOrder = ascendingOrder ? 'desc' : 'asc';
+
+    rows.sort((rowA, rowB) => {
+        const titleA = rowA.cells[0].textContent.trim();
+        const titleB = rowB.cells[0].textContent.trim();
+        // Use localeCompare based on the sorting order
+        return ascendingOrder ? titleA.localeCompare(titleB) : titleB.localeCompare(titleA);
+    });
+
+    tbody.innerHTML = '';
+
+    rows.forEach(row => {
+        tbody.appendChild(row);
+    });
+
+    updateSortButtonText('sortBtnProducts');
+}
+
+    // Function to toggle sort order for vouchers
+    function toggleSortOrderUsers() {
+    const tbody = document.querySelector('#edit-user tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+
+    // Toggle sorting order based on the current state
+    const ascendingOrder = tbody.dataset.sortOrder === 'asc';
+    tbody.dataset.sortOrder = ascendingOrder ? 'desc' : 'asc';
+
+    rows.sort((rowA, rowB) => {
+        const nameA = rowA.cells[0].textContent.trim();
+        const nameB = rowB.cells[0].textContent.trim();
+        // Use localeCompare based on the sorting order
+        return ascendingOrder ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
+    });
+
+    tbody.innerHTML = '';
+
+    rows.forEach(row => {
+        tbody.appendChild(row);
+    });
+
+    updateSortButtonText('sortBtnUsers');
+}
+
+        // Function to toggle sort order for vouchers
+        function toggleSortOrderVouchers() {
+    const tbody = document.querySelector('#edit-voucher tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+
+    // Toggle sorting order based on the current state
+    const ascendingOrder = tbody.dataset.sortOrder === 'asc';
+    tbody.dataset.sortOrder = ascendingOrder ? 'desc' : 'asc';
+
+    rows.sort((rowA, rowB) => {
+        const codeA = rowA.cells[0].textContent.trim();
+        const codeB = rowB.cells[0].textContent.trim();
+        // Use localeCompare based on the sorting order
+        return ascendingOrder ? codeA.localeCompare(codeB) : codeB.localeCompare(codeA);
+    });
+
+    tbody.innerHTML = '';
+
+    rows.forEach(row => {
+        tbody.appendChild(row);
+    });
+
+    updateSortButtonText('sortBtnVouchers');
+}
+
+    // Function to update sort button text
+    function updateSortButtonText(btnId) {
+            const btn = document.getElementById(btnId);
+            if (btn.textContent === 'Sort A-Z') {
+                btn.textContent = 'Sort Z-A';
+            } else {
+                btn.textContent = 'Sort A-Z';
+            }
+        }
     </script>
     <%- include('footer') %>
 </body>

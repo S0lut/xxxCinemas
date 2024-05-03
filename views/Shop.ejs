@@ -10,7 +10,12 @@
     <header>
         <a href="/" class="exitButton">&times; </a>
         <h1>Movie Theater Food and Beverages</h1>
-        <a href="cart" class="cart-icon"><img src="/image/cart.png" alt="Cart"></a>
+        <a href="cart" class="cart-icon">&times;</a>
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <button id="filterFoodBtn">Food</button>
+        <button id="filterBeverageBtn">Beverage</button>
+        <button id="showAllBtn">Show All</button>
+        <div id="searchResults"></div>
     </header>
 
     <div class="menu-container">
@@ -18,7 +23,7 @@
             <h2>Food</h2>
             <div class="menu-items">
                 <% foodProducts.forEach(product => { %> 
-                    <div class="menu-item">
+                    <div class="menu-item food-item">
                         <img src="<%= product.img %>" alt="<%= product.title %>">
                         <h6><%= product.title %></h6>
                         <p>Description: <%= product.desc %></p>
@@ -36,7 +41,7 @@
             <h2>Beverages</h2>
             <div class="menu-items">
                 <% beverageProducts.forEach(product => { %> 
-                    <div class="menu-item">
+                    <div class="menu-item beverage-item">
                         <img src="<%= product.img %>" alt="<%= product.title %>">
                         <h6><%= product.title %></h6>
                         <p>Description: <%= product.desc %></p>
@@ -51,15 +56,7 @@
         </section>
     </div>
 
-    <div id="cart-dropdown" class="cart-dropdown">
-        <h2>Shopping Cart</h2>
-        <ul id="cart-items"></ul>
-        <p>Total: $<span id="cart-total">0.00</span></p>
-    </div>
-    
-    <script src="script.js"></script>
     <script>
-        // JavaScript function to add items to the cart
         function addToCart(title, price) {
             var cartItems = document.getElementById("cart-items");
             var cartTotal = document.getElementById("cart-total");
@@ -69,6 +66,122 @@
             var currentTotal = parseFloat(cartTotal.textContent);
             cartTotal.textContent = (currentTotal + price).toFixed(2);
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.getElementById("searchInput");
+            const searchResults = document.getElementById("searchResults");
+            const foodSection = document.querySelector(".food");
+            const beverageSection = document.querySelector(".beverage");
+            const foodItems = document.querySelectorAll(".food-item");
+            const beverageItems = document.querySelectorAll(".beverage-item");
+            let previousQuery = ""; // Track previous search query
+
+            searchInput.addEventListener("input", function() {
+                const query = searchInput.value.trim();
+                searchResults.innerHTML = ""; // Clear previous search results
+
+                // If query is empty, reset the search
+                if (!query) {
+                    previousQuery = "";
+                    return; // Exit the function
+                }
+
+                const filteredItems = [];
+                foodItems.forEach(item => {
+                const title = item.querySelector("h6").textContent.toLowerCase();
+                if (title.startsWith(query.toLowerCase()) && foodSection.style.display !== "none") {
+                const outerHTML = item.outerHTML;
+            // Wrap the outerHTML in a div with black text color
+                filteredItems.push(`<div style="color: black;">${outerHTML}</div>`);
+        }
+    });
+                beverageItems.forEach(item => {
+                const title = item.querySelector("h6").textContent.toLowerCase();
+                if (title.startsWith(query.toLowerCase()) && beverageSection.style.display !== "none") {
+                const outerHTML = item.outerHTML;
+            // Wrap the outerHTML in a div with black text color
+                filteredItems.push(`<div style="color: black;">${outerHTML}</div>`);
+        }
+    });
+
+
+                // Display the filtered items in the search results
+                if (filteredItems.length > 0) {
+                    searchResults.innerHTML = filteredItems.join("");
+                } else {
+                    searchResults.innerHTML = "<p>No results found</p>";
+                }
+
+                // Update previous query
+                previousQuery = query;
+
+                // Center the search result if query exists
+                if (query) {
+                    searchResults.classList.add("centered");
+                } else {
+                    searchResults.classList.remove("centered");
+                }
+            });
+
+            const filterFoodBtn = document.getElementById("filterFoodBtn");
+            const filterBeverageBtn = document.getElementById("filterBeverageBtn");
+            const showAllBtn = document.getElementById("showAllBtn");
+
+            filterFoodBtn.addEventListener("click", function() {
+                foodSection.style.display = "block";
+                beverageSection.style.display = "none";
+                // Reset search results
+                searchResults.innerHTML = "";
+                previousQuery = "";
+                searchResults.classList.remove("centered");
+            });
+
+            filterBeverageBtn.addEventListener("click", function() {
+                foodSection.style.display = "none";
+                beverageSection.style.display = "block";
+                // Reset search results
+                searchResults.innerHTML = "";
+                previousQuery = "";
+                searchResults.classList.remove("centered");
+            });
+
+            showAllBtn.addEventListener("click", function() {
+                foodSection.style.display = "block";
+                beverageSection.style.display = "block";
+                // Reset search results
+                searchResults.innerHTML = "";
+                previousQuery = "";
+                searchResults.classList.remove("centered");
+            });
+
+            // Make product items clickable
+            foodItems.forEach(item => {
+                item.addEventListener("click", function() {
+                    const productId = item.id;
+                    const element = document.getElementById(productId);
+                    element.scrollIntoView({ behavior: "smooth", block: "center" });
+                    // Highlight the clicked product
+                    element.classList.add("highlighted");
+                    setTimeout(() => {
+                        element.classList.remove("highlighted");
+                    }, 2000); // Remove highlight after 2 seconds
+                });
+            });
+
+            beverageItems.forEach(item => {
+                item.addEventListener("click", function() {
+                    const productId = item.id;
+                    const element = document.getElementById(productId);
+                    element.scrollIntoView({ behavior: "smooth", block: "center" });
+                    // Highlight the clicked product
+                    element.classList.add("highlighted");
+                    setTimeout(() => {
+                        element.classList.remove("highlighted");
+                    }, 2000); // Remove highlight after 2 seconds
+                });
+            });
+        });
     </script>
+
 </body>
 </html>

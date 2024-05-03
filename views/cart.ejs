@@ -9,10 +9,11 @@
 <body>
     <header>
         <h1>Movie Theater Food and Beverages</h1>
+        <h1>Shopping Cart</h1>
         <a href="/" class="cart-icon">&times;</a>
+        <a href="Shop" class="back">&times;</a>
     </header>
 
-    <h1>Shopping Cart</h1>
     
     <% if (cart.length === 0) { %>
         <p>Your cart is empty.</p>
@@ -38,7 +39,7 @@
                                 <button type="submit">Update</button>
                             </form>
                         </td>
-                        <td>$<%= (item.price * item.quantity) %></td> <!-- Removed .toFixed(2) -->
+                        <td>$<%= (item.price * item.quantity).toFixed(2) %></td>
                         <td>
                             <form action="/cart/remove_from_cart/<%= item._id %>" method="POST">
                                 <button type="submit">Remove</button>
@@ -72,7 +73,7 @@
         cart.forEach(item => {
             totalPrice += item.price * item.quantity;
         });
-        return totalPrice;
+        return totalPrice.toFixed(2);
     } %>
 </body>
 </html>
