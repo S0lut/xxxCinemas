@@ -119,7 +119,6 @@ router.post('/checkout', async (req, res) => {
         const user = await UserModel.findOne({ name: username });
         const admin = await UserModel.findOne({ name: 'admin' });
 
-
         if (!user) {
             return res.redirect('/Signin');
         }
@@ -136,11 +135,15 @@ router.post('/checkout', async (req, res) => {
             }
         }
 
+        // Parse user balance to a number
+        user.balance = parseFloat(user.balance);
+
         // Clear the cart
         user.cart = [];
 
         // Calculate the total price of items in ordered
-        const totalPrice = req.body.totalPrice;
+        const totalPrice = parseFloat(req.body.totalPrice); // Parse the total price to a number
+        user.totalPrice = parseFloat(user.totalPrice);
 
         // Check if voucher code is provided and not empty
         const voucherCode = req.body.voucherCode || ''; // Assuming voucherCode is passed as a form field
@@ -166,12 +169,19 @@ router.post('/checkout', async (req, res) => {
             return res.status(400).json({ message: "Insufficient balance" });
         }
 
+        // Parse admin balance to a number
+        admin.balance = parseFloat(admin.balance);
+
         // Reduce user's balance
         user.balance -= finalTotalPrice;
+
+        // Increase admin's balance
         admin.balance += finalTotalPrice;
+
         // Save the changes
         await user.save();
         await admin.save();
+
         res.render('success', {
             finalTotalPrice: user.balance,
         });
@@ -181,5 +191,6 @@ router.post('/checkout', async (req, res) => {
         res.status(500).json({ message: "Internal server error" });
     }
 });
+
 
 module.exports = router;
