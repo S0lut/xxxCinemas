@@ -38,7 +38,7 @@
                                 <button type="submit">Update</button>
                             </form>
                         </td>
-                        <td>$<%= (item.price * item.quantity).toFixed(2) %></td>
+                        <td>$<%= (item.price * item.quantity) %></td> <!-- Removed .toFixed(2) -->
                         <td>
                             <form action="/cart/remove_from_cart/<%= item._id %>" method="POST">
                                 <button type="submit">Remove</button>
@@ -72,7 +72,7 @@
         cart.forEach(item => {
             totalPrice += item.price * item.quantity;
         });
-        return totalPrice.toFixed(2);
+        return totalPrice;
     } %>
 </body>
 </html>
