@@ -13,9 +13,13 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
+    "connect": "^3.7.0",
+    "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.6",
     "ejs": "^3.1.9",
     "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "flash": "^1.1.0",
     "jquery": "^3.7.1",
     "mongodb": "^6.5.0",
     "mongoose": "^8.2.4",

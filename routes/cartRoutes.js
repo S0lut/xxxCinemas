@@ -193,8 +193,7 @@ router.post('/checkout', async (req, res) => {
 });
 
 
-<<<<<<< HEAD
+
 module.exports = router;
-=======
-module.exports = router;
->>>>>>> 965dc259ff14caa9f150a243342a647cabf3dc52
+
+
