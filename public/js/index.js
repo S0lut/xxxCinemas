@@ -223,7 +223,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                 document.cookie = "isAdmin=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                 location.href = "/"; 
             });
-            await fetchAndUpdateBalance(); // Fetch and update the balance when the page is loaded
+            await fetchAndUpdateBalance();
         } catch (error) {
             console.error('Error fetching user balance:', error);
         }
