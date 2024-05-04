@@ -4,7 +4,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f3f3f3;
+    background-image: url('https://img.freepik.com/free-vector/red-movie-theater-seats-with-curtains-background_1017-38388.jpg'); /* Ganti 'nama-file-gambar.jpg' dengan URL atau path file gambar Anda */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     font-family: Arial, sans-serif;
 }
 
@@ -39,14 +42,13 @@ body {
     .checkmark::after {
         content: '';
         position: absolute;
-        width: 20px;
-        height: 40px;
-        border-width: 0 0 4px 4px;
-        border-color: #fff;
-        border-style: solid;
-        transform: rotate(-45deg);
-        top: 43px;
-        left: 32px;
+        top: 20px;
+        left: 35px;
+        width: 25px;
+        height: 50px;
+        border: solid #fff;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
         animation: fadeIn 0.5s ease forwards;
     }
     

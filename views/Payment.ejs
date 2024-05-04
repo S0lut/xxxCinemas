@@ -10,7 +10,7 @@
     <h1 style="justify-content: center;">Payment Page</h1>
     <div class="container">
         <form id="paymentForm" action="/ticket/<%= id %>/process_payment" method="post" style="padding: 20px;">
-            <h2>Ringkasan Pembelian:</h2>
+            <h2>Purchase Summary:</h2>
             <% selectedSeats.forEach(function(seat) { %>
                 <input type="hidden" name="selectedSeats" value='<%= seat %>'>
             <% }); %>
@@ -26,6 +26,6 @@
             <button type="submit" id="processPaymentButton">Process Payment</button>
         </form>
     </div>
-    <%- include('footer') %>
+
 </body>
 </html>

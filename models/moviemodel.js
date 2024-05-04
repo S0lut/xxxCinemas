@@ -12,7 +12,7 @@ const movieSchema = new mongoose.Schema({
   posterUrl: String,
   genre: String,
   ageRating: String,
-  runtime: Number,
+  runtime  : Number,
   director: String,
   seats: [seatSchema],
   date: {type: Date, get: getDateWithoutTimezone },

@@ -4,6 +4,14 @@ body {
     padding: 0;
 }
 
+header {
+    background: radial-gradient(circle, #8e00bd 0%, #2d003b 100%);
+    color: #fff; /* Untuk mengubah warna teks */
+    padding: 20px; /* Untuk menambahkan padding agar teks tidak terlalu dekat dengan tepi */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  
+}
+
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -16,7 +24,7 @@ h1 {
 
 .back {
     font-size: 24px;
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     padding-right: 10000px;
     position: absolute;
@@ -63,9 +71,26 @@ button {
     color: #fff;
 }
 
-button:hover {
-    background-color: #0056b3;
+
+/* Tombol Update dan Remove */
+button[type="submit"] {
+    background-color: #4CAF50; /* Warna latar tombol */
+    color: white; /* Warna teks */
+    border: none;
+    padding: 10px 20px; /* Padding tombol */
+    cursor: pointer;
+    border-radius: 5px; /* Bentuk sudut tombol */
+    transition: box-shadow 0.3s;
+    transition: transform 0.3s
 }
+
+/* Efek hover */
+button[type="submit"]:hover {
+    background-color: #45a049; /* Warna latar saat tombol dihover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+
 
 .cart-buttons {
     display: flex;

@@ -1,9 +1,10 @@
 /* public/stylesheets/payment.css */
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    background: radial-gradient(circle, #8e00bd 0%, #2d003b 100%);
 }
 
 .form-padding {
@@ -12,14 +13,20 @@ body {
 
 .container {
     max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center; /* Center align content */
+    margin: 50px auto; /* Lebih sedikit margin atas dan bawah, lebih banyak di sisi */
+    padding: 40px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk kontainer */
 }
 
-h1, h2 {
-    align-items: center;
-    color: #333;
+h1{
+    color: #ffffff;
+}
+
+h2{
+    color:rgba(0, 0, 0, 0.1);
 }
 
 ul {
@@ -32,19 +39,38 @@ li {
 }
 
 button {
-    padding: 10px 20px;
-    margin: 10px 0;
+    padding: 12px 24px;
+    margin: 20px 0;
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px; /* Bentuk tombol bundar */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease; /* Animasi untuk semua perubahan */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan tombol */
 }
 
 p {
-    padding: 5px;
+    padding: 10px;
 }
+
 button:hover {
     background-color: #0056b3;
+    transform: translateY(-3px); /* Mendorong tombol sedikit ke atas */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan yang lebih dramatis */
+}
+
+input[type="text"] {
+    padding: 12px;
+    margin: 10px 0;
+    width: 30%; 
+    border: 2px;
+    background-color: #f5f5f5;
+    box-shadow: inset 0 6px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }

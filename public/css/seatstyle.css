@@ -299,7 +299,7 @@ input{
 
   .price button:hover {
     animation: shake 0.5s ease; /* Apply shake animation on hover */
-    background: #ff5733; /* Change background color */
+    background: #01b7ff; /* Change background color */
     color: #222; /* Change text color */
   }
 

@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background: radial-gradient(circle, #8e00bd 0%, #2d003b 100%);
     color: #333;
     margin: 0;
     padding: 0;
@@ -9,14 +9,14 @@ body {
 h1 {
     text-align: center;
     margin-top: 30px;
-    color: #6a0dad;
+    color: #ffffff;
 }
 
 .back-btn {
     display: block;
     text-align: left;
     margin: 20px;
-    color: #6a0dad;
+    color: #ffffff;
     text-decoration: none;
     font-size: 25px; /* Adjust font size as needed */
     position: absolute;
@@ -75,7 +75,7 @@ button:hover {
 }
 
 .ticket {
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   margin-bottom: 10px;
   padding: 10px;
 }
@@ -93,14 +93,14 @@ button:hover {
 }
 
 .ticket .tic .barcode img {
-  width: 100px; /* Adjust barcode image width */
+  width: 200px;
   margin-right: 10px;
-  height: 100%;
+  height: 200%;
 }
 
 .ticket .tic .barcode .card {
-  width: 100px; /* Adjust card width */
-  height: 60px; /* Adjust card height */
+  width: 100px; 
+  height: 80px;
   background-color: #ccc;
   display: flex;
   align-items: center;

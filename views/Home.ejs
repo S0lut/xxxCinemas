@@ -47,7 +47,7 @@
                 <div class="movieArrow" id="nextMovie"><span class="material-symbols-outlined">keyboard_arrow_right</span></div>
 
                 <% movies.forEach(function(movie) { %>
-                    <div class="movieCard" data-aos="zoom-in-right" data-aos-duration="1500" data-aos-delay="150">
+                    <div class="movieCard" data-aos="zoom-in-right" data-aos-duration="1500">
                         <img src="<%= movie.posterUrl %>" alt="<%= movie.title %>" class="moviePoster">
                         <div class="movieTitle"><%= movie.title %></div>
                         <a href="/ticket/<%= movie._id %>"><button class="bookNowButton">Book Now</button></a>
