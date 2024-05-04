@@ -92,6 +92,8 @@ button[type="submit"]:hover {
 }
 
 
+
+
 .cart-buttons {
     display: flex;
     justify-content: flex-end; /* Align buttons to the right */
@@ -116,4 +118,58 @@ button[type="submit"]:hover {
     padding: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+
+input[type="text"] {
+    padding: 12px;
+    margin: 10px 0;
+    width: 10%; 
+    border: 2px;
+    background-color: #f5f5f5;
+    box-shadow: inset 0 6px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.empty-cart-message {
+    font-size: 40px; /* Ukuran font */
+    color: #555; /* Warna teks */
+    text-align: center; /* Pusatkan teks */
+    margin-top: 20px; /* Jarak atas dari elemen sebelumnya */
+    padding: 10px; /* Ruang dalam di sekitar teks */
+    background-color: #f2f2f2; /* Warna latar belakang */
+    border-radius: 5px; /* Bentuk sudut */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Bayangan */
+}
+
+.empty-cart-submessage {
+    font-size: 30px;
+    color: #555;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.shop-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.shop-button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.shop-button:hover {
+    background-color: #0056b3;
+}
+
+
 

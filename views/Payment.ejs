@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="/css/paymentstyle.css">
 </head>
 <body>
-    <h1 style="justify-content: center;">Payment Page</h1>
+    <h1 class="page-title">Payment Page</h1>
     <div class="container">
         <form id="paymentForm" action="/ticket/<%= id %>/process_payment" method="post" style="padding: 20px;">
-            <h2>Purchase Summary:</h2>
+            <h2 class="purchase-summary">Purchase Summary:</h2>
             <% selectedSeats.forEach(function(seat) { %>
                 <input type="hidden" name="selectedSeats" value='<%= seat %>'>
             <% }); %>
             <input type="hidden" name="totalPrice" value="<%= totalPrice %>">
-            <p>Movie Title: <%= selectedTitle %></p>
-            <p>Selected Seats: <%= selectedSeats %></p>
-            <p>Selected Date: <%= selectedDate %></p>
-            <p>Selected Time: <%= selectedTime %></p>
-            <p>Price per ticket: $<%= moviePrice %></p>
-            <p>Total Price: $<span id="totalPrice"><%= totalPrice %></span></p>
+            <p class="purchase-detail">Movie Title: <%= selectedTitle %></p>
+            <p class="purchase-detail">Selected Seats: <%= selectedSeats %></p>
+            <p class="purchase-detail">Selected Date: <%= selectedDate %></p>
+            <p class="purchase-detail">Selected Time: <%= selectedTime %></p>
+            <p class="purchase-detail">Price per ticket: $<%= moviePrice %></p>
+            <p class="purchase-detail">Total Price: $<span id="totalPrice"><%= totalPrice %></span></p>            
             <label for="voucherCode">Voucher Code (optional):</label>
             <input type="text" id="voucherCode" name="voucherCode">
             <button type="submit" id="processPaymentButton">Process Payment</button>

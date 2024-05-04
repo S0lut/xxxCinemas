@@ -7,6 +7,12 @@ body {
     background: radial-gradient(circle, #8e00bd 0%, #2d003b 100%);
 }
 
+.page-title {
+    margin-top: 20px;
+    margin-left: 30px; /* Atur jarak atas sesuai kebutuhan */
+}
+
+
 .form-padding {
     padding: 20px;
 }
@@ -25,8 +31,16 @@ h1{
     color: #ffffff;
 }
 
-h2{
-    color:rgba(0, 0, 0, 0.1);
+.purchase-summary {
+    font-size: 24px;
+    line-height: 40px;
+    margin-top: -30px; 
+    color: black;
+}
+
+.purchase-detail {
+    border: 1.5px solid #000000c7;
+    padding: 5px;
 }
 
 ul {

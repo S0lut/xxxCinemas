@@ -16,7 +16,11 @@
 
     
     <% if (cart.length === 0) { %>
-        <p>Your cart is empty.</p>
+        <p class="empty-cart-message">Your cart is empty.</p>
+        <p class="empty-cart-submessage">Press to buy something</p>
+        <div class="shop-button-container">
+            <a href="Shop" class="shop-button">Shop Now</a>
+        </div>
     <% } else { %>
         <table>
             <thead>

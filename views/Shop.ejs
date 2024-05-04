@@ -10,12 +10,12 @@
 <body>
     <header>
         <a href="/" class="exitButton">&times; </a>
-        <h1>xxxCinemas Foods and Bever  ages</h1>
+        <h1>xxxCinemas Foods and Beverages</h1>
         <a href="cart" class="cart-icon"><img src="image/cart.png" alt="Cart"></a>
         <input type="text" id="searchInput" placeholder="Search products...">
-        <button id="filterFoodBtn">Food</button>
-        <button id="filterBeverageBtn">Beverage</button>
-        <button id="showAllBtn">Show All</button>
+        <button id="filterFoodBtn" class="filter-btn">Food</button>
+        <button id="filterBeverageBtn" class="filter-btn">Beverage</button>
+        <button id="showAllBtn" class="filter-btn">Show All</button>        
         <div id="searchResults"></div>
     </header>
 
@@ -26,12 +26,12 @@
                 <% foodProducts.forEach(product => { %> 
                     <div class="menu-item food-item">
                         <img src="<%= product.img %>" alt="<%= product.title %>">
-                        <h6><%= product.title %></h6>
-                        <p>Description: <%= product.desc %></p>
+                        <h3><%= product.title %></h3>
+                        <p><%= product.desc %></p>
                         <p>Price: $<%= product.price %></p>
                         <form action="/shop/<%=product._id%>/add_to_cart" method="post">
                             <input type="hidden" name="productId" value="<%= product._id %>">
-                            <input type="submit" value="Add to Cart">
+                            <input type="submit" value="Add to Cart" class="add-to-cart-btn">
                         </form>
                     </div>
                 <% }); %>
@@ -44,12 +44,12 @@
                 <% beverageProducts.forEach(product => { %> 
                     <div class="menu-item beverage-item">
                         <img src="<%= product.img %>" alt="<%= product.title %>">
-                        <h6><%= product.title %></h6>
-                        <p>Description: <%= product.desc %></p>
+                        <h3><%= product.title %></h3>
+                        <p><%= product.desc %></p>
                         <p>Price: $<%= product.price %></p>
                         <form action="/shop/<%=product._id%>/add_to_cart" method="post">
                             <input type="hidden" name="productId" value="<%= product._id %>">
-                            <input type="submit" value="Add to Cart">
+                            <input type="submit" value="Add to Cart" class="add-to-cart-btn">
                         </form>
                     </div>
                 <% }); %>
@@ -58,6 +58,7 @@
     </div>
 
     <script>
+        
         function addToCart(title, price) {
             var cartItems = document.getElementById("cart-items");
             var cartTotal = document.getElementById("cart-total");
@@ -79,9 +80,9 @@
 
             searchInput.addEventListener("input", function() {
                 const query = searchInput.value.trim();
-                searchResults.innerHTML = ""; // Clear previous search results
+                searchResults.innerHTML = "";
 
-                // If query is empty, reset the search
+
                 if (!query) {
                     previousQuery = "";
                     return; // Exit the function
@@ -89,7 +90,7 @@
 
                 const filteredItems = [];
                 foodItems.forEach(item => {
-                const title = item.querySelector("h6").textContent.toLowerCase();
+                const title = item.querySelector("h3").textContent.toLowerCase();
                 if (title.startsWith(query.toLowerCase()) && foodSection.style.display !== "none") {
                 const outerHTML = item.outerHTML;
             // Wrap the outerHTML in a div with black text color
@@ -97,7 +98,7 @@
         }
     });
                 beverageItems.forEach(item => {
-                const title = item.querySelector("h6").textContent.toLowerCase();
+                const title = item.querySelector("h3").textContent.toLowerCase();
                 if (title.startsWith(query.toLowerCase()) && beverageSection.style.display !== "none") {
                 const outerHTML = item.outerHTML;
             // Wrap the outerHTML in a div with black text color
