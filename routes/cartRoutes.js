@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const UserModel = require('../models/accountModel'); // Assuming this is the path to your UserModel
+const UserModel = require('../models/accountModel');
 const VoucherModel = require('../models/voucherModel');
 
 
-// Route handler to update the quantity of an item in the cart
+
 router.post('/update_quantity/:itemId', async (req, res) => {
     try {
         const username = req.cookies.username;
@@ -25,19 +25,19 @@ router.post('/update_quantity/:itemId', async (req, res) => {
             return res.redirect('/Signin');
         }
 
-        // Find the item in the user's cart
+
         const cartItem = user.cart.find(item => item._id.equals(itemId));
 
         if (!cartItem) {
             return res.status(404).json({ message: "Item not found in cart" });
         }
 
-        // Update the quantity
+
         cartItem.quantity = newQuantity;
 
         await user.save();
 
-        res.redirect('/cart'); // Redirect to cart page after updating the quantity
+        res.redirect('/cart'); 
 
     } catch (error) {
         console.error("Error updating quantity:", error);
@@ -60,19 +60,19 @@ router.post('/remove_from_cart/:itemId', async (req, res) => {
             return res.redirect('/Signin');
         }
 
-        // Find the index of the item in the user's cart
+
         const itemIndex = user.cart.findIndex(item => item._id.equals(itemId));
 
         if (itemIndex === -1) {
             return res.status(404).json({ message: "Item not found in cart" });
         }
 
-        // Remove the item from the cart
+
         user.cart.splice(itemIndex, 1);
 
         await user.save();
 
-        res.redirect('/cart'); // Redirect to cart page after removing the item
+        res.redirect('/cart'); 
 
     } catch (error) {
         console.error("Error removing item from cart:", error);
@@ -94,12 +94,12 @@ router.post('/clear_cart', async (req, res) => {
             return res.redirect('/Signin');
         }
 
-        // Clear all items from the cart
+
         user.cart = [];
 
         await user.save();
 
-        res.redirect('/cart'); // Redirect to cart page after clearing the cart
+        res.redirect('/cart');
 
     } catch (error) {
         console.error("Error clearing cart:", error);
@@ -107,7 +107,7 @@ router.post('/clear_cart', async (req, res) => {
     }
 });
 
-// Route handler for checkout
+
 router.post('/checkout', async (req, res) => {
     try {
         const username = req.cookies.username;
@@ -123,30 +123,28 @@ router.post('/checkout', async (req, res) => {
             return res.redirect('/Signin');
         }
 
-        // Move items from cart to ordered
+
         for (const cartItem of user.cart) {
             const existingOrderedItemIndex = user.ordered.findIndex(orderedItem => orderedItem.name === cartItem.name);
             if (existingOrderedItemIndex !== -1) {
-                // If the same item already exists in ordered, increase its quantity
                 user.ordered[existingOrderedItemIndex].quantity += cartItem.quantity;
             } else {
-                // Otherwise, add it as a new item in ordered
                 user.ordered.push(cartItem);
             }
         }
 
-        // Parse user balance to a number
+
         user.balance = parseFloat(user.balance);
 
-        // Clear the cart
+
         user.cart = [];
 
-        // Calculate the total price of items in ordered
-        const totalPrice = parseFloat(req.body.totalPrice); // Parse the total price to a number
+
+        const totalPrice = parseFloat(req.body.totalPrice);
         user.totalPrice = parseFloat(user.totalPrice);
 
-        // Check if voucher code is provided and not empty
-        const voucherCode = req.body.voucherCode || ''; // Assuming voucherCode is passed as a form field
+
+        const voucherCode = req.body.voucherCode || '';
         let finalTotalPrice = totalPrice;
 
         if (voucherCode.trim() !== '') {
@@ -169,13 +167,13 @@ router.post('/checkout', async (req, res) => {
             return res.status(400).json({ message: "Insufficient balance" });
         }
 
-        // Parse admin balance to a number
+  
         admin.balance = parseFloat(admin.balance);
 
-        // Reduce user's balance
+
         user.balance -= finalTotalPrice;
 
-        // Increase admin's balance
+
         admin.balance += finalTotalPrice;
 
         // Save the changes
@@ -183,7 +181,8 @@ router.post('/checkout', async (req, res) => {
         await admin.save();
 
         res.render('success', {
-            finalTotalPrice: user.balance,
+            sisasaldo: user.balance,
+            finalTotalPrice: finalTotalPrice,
         });
 
     } catch (error) {

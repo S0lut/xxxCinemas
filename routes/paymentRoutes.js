@@ -8,7 +8,7 @@ const fs = require('fs');
 router.post('/:movieId/payment', async (req, res) => {
   try {
     const { selectedSeats } = req.body;
-    const username = req.cookies.username; // Get username from the cookie
+    const username = req.cookies.username; 
 
     if (!username) {
         return res.redirect('/Signin');
@@ -26,7 +26,6 @@ router.post('/:movieId/payment', async (req, res) => {
         return res.redirect('/');
     }
 
-    // Check if selectedSeats is an array
     let seatsArray = [];
     if (Array.isArray(selectedSeats)) {
         seatsArray = selectedSeats;
@@ -34,10 +33,8 @@ router.post('/:movieId/payment', async (req, res) => {
         seatsArray.push(selectedSeats);
     }
 
-    // Calculate total price based on selected seats
     const totalPrice = seatsArray.length * movieData.price;
 
-    // Render the payment page with relevant data
     res.render('payment', {
         id: movieData._id,
         moviePrice: movieData.price,
@@ -59,27 +56,24 @@ router.post('/:movieId/payment', async (req, res) => {
 router.post('/:movieId/process_payment', async (req, res) => {
     try {
         const { selectedSeats, totalPrice, voucherCode } = req.body;
-        const username = req.cookies.username; // Get username from the cookie
+        const username = req.cookies.username;
 
         if (!username) {
             return res.status(401).json({ message: "User not authenticated" });
         }
 
         const user = await UserModel.findOne({ name: username });
-        const admin = await UserModel.findOne({ name: "admin" }); // Find admin user
+        const admin = await UserModel.findOne({ name: "admin" });
         const movieData = await MovieModel.findById(req.params.movieId);
         
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }
 
-        // Ensure selectedSeats is always treated as an array
         const seatsArray = Array.isArray(selectedSeats) ? selectedSeats : [selectedSeats];
 
-        // Check if user's balance is sufficient
         let finalTotalPrice = totalPrice;
 
-        // Check if voucher code is provided and not empty
         if (voucherCode && voucherCode.trim() !== '') {
             const voucher = await VoucherModel.findOne({ code: voucherCode });
             if (!voucher) {
@@ -100,13 +94,13 @@ router.post('/:movieId/process_payment', async (req, res) => {
             return res.status(400).json({ message: "Insufficient balance" });
         }
 
-        // Deduct from user's balance
         user.balance -= finalTotalPrice;
 
-        // Add deducted amount to admin's balance
         admin.balance += finalTotalPrice;
 
-        // Mark the corresponding seats as booked in the movie schema
+        user.balance = parseFloat(user.balance);
+        admin.balance = parseFloat(admin.balance);
+
         seatsArray.forEach(seatIndex => {
             if (movieData.seats[seatIndex]) {
                 movieData.seats[seatIndex].booked = true;
@@ -123,15 +117,13 @@ router.post('/:movieId/process_payment', async (req, res) => {
             });
         });
 
-        // Save updated user, admin, and movie data
         await user.save();
-        await admin.save(); // Save admin's balance update
+        await admin.save();
         await movieData.save();
 
-        // Return success response
         res.render('success', {
-            finalTotalPrice: user.balance, // Assuming you want to display user's remaining balance
-            selectedSeats: seatsArray
+            sisasaldo: user.balance,
+            finalTotalPrice: finalTotalPrice,
         });
 
     } catch (error) {

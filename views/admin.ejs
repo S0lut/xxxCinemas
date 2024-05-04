@@ -201,7 +201,7 @@
                                 <td><%= user.name %></td>
                                 <td><%= user.email %></td>
                                 <td><%= user.isAdmin %></td>
-                                <td>Rp.<%= user.balance %></td>
+                                <td>$<%= user.balance %></td>
                                 <td>
                                     <button type="submit" style="background-color: green;" onclick="openEditUserModal('<%=user._id%>')">Edit</button>
                                     <form method="POST" action="/admin/user-delete/<%= user._id %>" style="display: inline;">

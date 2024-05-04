@@ -59,8 +59,7 @@ app.post("/Signin", async (req, res) => {
         return res.redirect('/Signin');
       }
 
-      // Set the dropdown content to the user's name
-      res.cookie("username", user.name); // Set username cookie for client-side access
+      res.cookie("username", user.name);
       res.cookie("balance", user.balance);
       res.cookie("isAdmin", user.isAdmin);
 

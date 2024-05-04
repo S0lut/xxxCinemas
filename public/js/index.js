@@ -216,7 +216,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         try {
             
             const balanceText = balance ? `<div id="balance">Balance: ${balance}</div>` : '';
-            loginDropdown.innerHTML = `<span>Hi, ${username}<br>${balanceText}<a href="#" id="logout-link">Log Out</a>`;
+            loginDropdown.innerHTML = `<span>Hi, ${username}<br><a href="#" id="logout-link">Log Out</a>`;
             document.getElementById("logout-link").addEventListener("click", () => {
                 document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                 document.cookie = "balance=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";

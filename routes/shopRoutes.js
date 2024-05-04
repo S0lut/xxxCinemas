@@ -26,10 +26,8 @@ router.post('/:productId/add_to_cart', async (req, res) => {
 
         const existingCartItemIndex = user.cart.findIndex(item => item._id.equals(product._id));
         if (existingCartItemIndex !== -1) {
-            // If the product is already in the cart, increase its quantity by 1
             user.cart[existingCartItemIndex].quantity += 1;
         } else {
-            // If the product is not in the cart, add it with quantity 1
             user.cart.push({
                 _id: product._id,
                 name: product.title,
