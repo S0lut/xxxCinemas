@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "6633394298ff35a8a7e75cb4"
+  },
+  "code": "harikemerdekaan",
+  "discount_type": "percentage",
+  "discount_value": 5,
+  "expiry_date": {
+    "$date": "2024-05-31T00:00:00.000Z"
+  },
+  "usage_limit": 5,
+  "used_count": 0,
+  "created_at": {
+    "$date": "2024-05-02T06:57:06.570Z"
+  },
+  "updated_at": {
+    "$date": "2024-05-02T06:57:06.570Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6633458e0a24a18494fecf76"
+  },
+  "code": "bulanmei",
+  "discount_type": "fixed_amount",
+  "discount_value": 5,
+  "expiry_date": {
+    "$date": "2024-05-03T00:00:00.000Z"
+  },
+  "usage_limit": 20,
+  "used_count": 0,
+  "created_at": {
+    "$date": "2024-05-02T07:49:34.618Z"
+  },
+  "updated_at": {
+    "$date": "2024-05-02T07:49:34.618Z"
+  },
+  "__v": 0
+}]

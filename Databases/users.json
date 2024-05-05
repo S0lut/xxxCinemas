@@ -1,0 +1,948 @@
+[{
+  "_id": {
+    "$oid": "662742de3f4806c93322b77b"
+  },
+  "name": "admin",
+  "email": "admin@gmail.com",
+  "password": "$2b$10$jOgQqVEk8tI83iV..aq2RewPtIJdJSZrgERE175thNXPLve/RJ0ea",
+  "isAdmin": true,
+  "cart": [],
+  "createdAt": {
+    "$date": "2024-04-23T05:10:54.468Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-04T16:04:47.362Z"
+  },
+  "__v": 67,
+  "balance": 5000,
+  "tickets": [
+    {
+      "movieTitle": "Inception",
+      "seatNumber": 0,
+      "date": "16-07",
+      "time": "21:00"
+    },
+    {
+      "movieTitle": "Inception",
+      "seatNumber": 1,
+      "date": "16-07",
+      "time": "21:00"
+    },
+    {
+      "movieTitle": "Inception",
+      "seatNumber": 2,
+      "date": "16-07",
+      "time": "21:00"
+    },
+    {
+      "movieTitle": "The Shawshank Redemption",
+      "seatNumber": 14,
+      "date": "01-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Shawshank Redemption",
+      "seatNumber": 15,
+      "date": "01-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Godfather",
+      "seatNumber": 1,
+      "date": "24-03",
+      "time": "20:30"
+    },
+    {
+      "movieTitle": "Pulp Fiction",
+      "seatNumber": 1,
+      "date": "14-10",
+      "time": "22:15"
+    },
+    {
+      "movieTitle": "Pulp Fiction",
+      "seatNumber": 0,
+      "date": "14-10",
+      "time": "22:15"
+    },
+    {
+      "movieTitle": "Pulp Fiction",
+      "seatNumber": 2,
+      "date": "14-10",
+      "time": "22:15"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 4,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 5,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 14,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 15,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 24,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 25,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "The Godfather",
+      "seatNumber": 2,
+      "date": "24-03",
+      "time": "20:30"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 34,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 35,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 34,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 35,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 34,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 35,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 34,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 35,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 34,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 35,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 34,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 35,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 34,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 35,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 34,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 35,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 34,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 35,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 34,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 35,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 34,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 35,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 34,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 35,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 34,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 35,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 34,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 35,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 34,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 35,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 45,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 45,
+      "date": "29-04",
+      "time": "16:00"
+    }
+  ],
+  "ordered": [
+    {
+      "name": "Nachos",
+      "quantity": 2,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08d8"
+      }
+    },
+    {
+      "name": "Smoothie",
+      "quantity": 4,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08de"
+      }
+    },
+    {
+      "name": "Hot Dog",
+      "quantity": 1,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08d9"
+      }
+    },
+    {
+      "name": "Milkshake",
+      "quantity": 5,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08df"
+      }
+    },
+    {
+      "name": "Pizza Slice",
+      "quantity": 1,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08db"
+      }
+    },
+    {
+      "name": "Chicken Wings",
+      "quantity": 1,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08da"
+      }
+    },
+    {
+      "name": "Popcorn",
+      "quantity": 7,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08d7"
+      }
+    },
+    {
+      "name": "Soda",
+      "quantity": 2,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08dc"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "662742e93f4806c93322b77e"
+  },
+  "name": "nicholas",
+  "email": "nicholas@gmail.com",
+  "password": "$2b$10$K582eFkKf1Ik.jU.X91UE.v4oO.FcqZ87Y2vA2.MeCvegEQqIfXBi",
+  "isAdmin": true,
+  "movieTickets": [],
+  "createdAt": {
+    "$date": "2024-04-23T05:11:05.794Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-04T15:50:39.472Z"
+  },
+  "__v": 60,
+  "balance": 50,
+  "tickets": [
+    {
+      "movieTitle": "The Shawshank Redemption",
+      "seatNumber": 3,
+      "date": "01-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Shawshank Redemption",
+      "seatNumber": 4,
+      "date": "01-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Shawshank Redemption",
+      "seatNumber": 5,
+      "date": "01-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Shawshank Redemption",
+      "seatNumber": 6,
+      "date": "01-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 44,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "The Godfather",
+      "seatNumber": 0,
+      "date": "24-03",
+      "time": "20:30"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 27,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 28,
+      "date": "29-04",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 29,
+      "date": "29-04",
+      "time": "16:00"
+    }
+  ],
+  "ordered": [
+    {
+      "name": "Popcorn",
+      "quantity": 20,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08d7"
+      }
+    },
+    {
+      "name": "Nachos",
+      "quantity": 4,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08d8"
+      }
+    },
+    {
+      "name": "Hot Dog",
+      "quantity": 8,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08d9"
+      }
+    },
+    {
+      "name": "test",
+      "quantity": 1,
+      "_id": {
+        "$oid": "66265485051699dc5f3b268c"
+      }
+    },
+    {
+      "name": "Iced Tea",
+      "quantity": 5,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08dd"
+      }
+    },
+    {
+      "name": "Soda",
+      "quantity": 6,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08dc"
+      }
+    },
+    {
+      "name": "Smoothie",
+      "quantity": 3,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08de"
+      }
+    },
+    {
+      "name": "Chicken Wings",
+      "quantity": 3,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08da"
+      }
+    },
+    {
+      "name": "Pizza Slice",
+      "quantity": 1,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08db"
+      }
+    }
+  ],
+  "cart": []
+},
+{
+  "_id": {
+    "$oid": "6631d14c2541dcd68b84e58a"
+  },
+  "name": "nathan",
+  "email": "nathan@gmail.com",
+  "password": "$2b$10$g0XsLn9v72RTkg.3G8i1k.oKng3hi/LKdop/eD36M1BuOl0T0EFLi",
+  "isAdmin": false,
+  "balance": 2855.85,
+  "cart": [],
+  "tickets": [
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 4,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 25,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 44,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 23,
+      "date": "06-05",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 24,
+      "date": "06-05",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 32,
+      "date": "06-05",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 34,
+      "date": "06-05",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 19,
+      "date": "06-05",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 28,
+      "date": "06-05",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 37,
+      "date": "06-05",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 6,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 16,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 26,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 36,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 46,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "Inception",
+      "seatNumber": 31,
+      "date": "06-05",
+      "time": "21:00"
+    },
+    {
+      "movieTitle": "Inception",
+      "seatNumber": 33,
+      "date": "06-05",
+      "time": "21:00"
+    },
+    {
+      "movieTitle": "Inception",
+      "seatNumber": 36,
+      "date": "06-05",
+      "time": "21:00"
+    },
+    {
+      "movieTitle": "Inception",
+      "seatNumber": 38,
+      "date": "06-05",
+      "time": "21:00"
+    },
+    {
+      "movieTitle": "Pulp Fiction",
+      "seatNumber": 15,
+      "date": "08-05",
+      "time": "22:15"
+    },
+    {
+      "movieTitle": "Pulp Fiction",
+      "seatNumber": 24,
+      "date": "08-05",
+      "time": "22:15"
+    },
+    {
+      "movieTitle": "Pulp Fiction",
+      "seatNumber": 33,
+      "date": "08-05",
+      "time": "22:15"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 22,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 23,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 24,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 5,
+      "date": "06-05",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 15,
+      "date": "06-05",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "Conjuring 2",
+      "seatNumber": 25,
+      "date": "06-05",
+      "time": "16:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 22,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 32,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 42,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 24,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 25,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 33,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 43,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 9,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 19,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 29,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 39,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 49,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 2,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 3,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 4,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 2,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 3,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 4,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 12,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 13,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 14,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 15,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 16,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 17,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 26,
+      "date": "06-05",
+      "time": "19:00"
+    },
+    {
+      "movieTitle": "The Dune",
+      "seatNumber": 27,
+      "date": "06-05",
+      "time": "19:00"
+    }
+  ],
+  "createdAt": {
+    "$date": "2024-05-01T05:21:16.498Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-04T15:22:07.726Z"
+  },
+  "__v": 38,
+  "ordered": [
+    {
+      "name": "Nachos",
+      "quantity": 2,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08d8"
+      }
+    },
+    {
+      "name": "Cookies",
+      "quantity": 1,
+      "_id": {
+        "$oid": "663602810371bf5b6fc9a97f"
+      }
+    },
+    {
+      "name": "Popcorn",
+      "quantity": 3,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08d7"
+      }
+    },
+    {
+      "name": "Smoothie",
+      "quantity": 1,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08de"
+      }
+    },
+    {
+      "name": "Iced Tea",
+      "quantity": 3,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08dd"
+      }
+    },
+    {
+      "name": "Milkshake",
+      "quantity": 1,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08df"
+      }
+    },
+    {
+      "name": "Soda",
+      "quantity": 3,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08dc"
+      }
+    },
+    {
+      "name": "Beer",
+      "quantity": 1,
+      "_id": {
+        "$oid": "663269a56d1a7e56327e08e0"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "663665547998444f7a56c86c"
+  },
+  "name": "vincent",
+  "email": "vincent@gmail.com",
+  "password": "$2b$10$D.0lqifGk8YJMbtRrqIBc.Vj5kc5w15Uj4A2lnzmkRPbIqRk/KxQm",
+  "isAdmin": false,
+  "balance": 50,
+  "cart": [],
+  "ordered": [],
+  "tickets": [],
+  "createdAt": {
+    "$date": "2024-05-04T16:41:56.436Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-04T16:41:56.436Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66366c0b7998444f7a56c8a3"
+  },
+  "name": "untar",
+  "email": "untar@gmail.com",
+  "password": "$2b$10$oxiY3L21FQ0hJgZeFH12CuHO1otHZqQanxsb1RPPaSsFNPU7JpX42",
+  "isAdmin": false,
+  "balance": 50,
+  "cart": [],
+  "ordered": [],
+  "tickets": [],
+  "createdAt": {
+    "$date": "2024-05-04T17:10:35.974Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-04T17:10:35.974Z"
+  },
+  "__v": 0
+}]

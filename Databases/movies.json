@@ -1,0 +1,1309 @@
+[{
+  "_id": {
+    "$oid": "66278565608dddf777f75d63"
+  },
+  "title": "Conjuring 2",
+  "posterUrl": "/image/conjuring2.jpg",
+  "genre": "Horror",
+  "ageRating": "R",
+  "runtime": 130,
+  "director": "James Wan",
+  "seats": [
+    {
+      "number": 1,
+      "booked": true
+    },
+    {
+      "number": 2,
+      "booked": true
+    },
+    {
+      "number": 3,
+      "booked": false
+    },
+    {
+      "number": 4,
+      "booked": false
+    },
+    {
+      "number": 5,
+      "booked": false
+    },
+    {
+      "number": 6,
+      "booked": true
+    },
+    {
+      "number": 7,
+      "booked": false
+    },
+    {
+      "number": 8,
+      "booked": false
+    },
+    {
+      "number": 9,
+      "booked": false
+    },
+    {
+      "number": 10,
+      "booked": false
+    },
+    {
+      "number": 11,
+      "booked": true
+    },
+    {
+      "number": 12,
+      "booked": true
+    },
+    {
+      "number": 13,
+      "booked": false
+    },
+    {
+      "number": 14,
+      "booked": false
+    },
+    {
+      "number": 15,
+      "booked": false
+    },
+    {
+      "number": 16,
+      "booked": true
+    },
+    {
+      "number": 17,
+      "booked": false
+    },
+    {
+      "number": 18,
+      "booked": false
+    },
+    {
+      "number": 19,
+      "booked": false
+    },
+    {
+      "number": 20,
+      "booked": true
+    },
+    {
+      "number": 21,
+      "booked": false
+    },
+    {
+      "number": 22,
+      "booked": false
+    },
+    {
+      "number": 23,
+      "booked": false
+    },
+    {
+      "number": 24,
+      "booked": true
+    },
+    {
+      "number": 25,
+      "booked": true
+    },
+    {
+      "number": 26,
+      "booked": true
+    },
+    {
+      "number": 27,
+      "booked": false
+    },
+    {
+      "number": 28,
+      "booked": false
+    },
+    {
+      "number": 29,
+      "booked": true
+    },
+    {
+      "number": 30,
+      "booked": false
+    },
+    {
+      "number": 31,
+      "booked": false
+    },
+    {
+      "number": 32,
+      "booked": false
+    },
+    {
+      "number": 33,
+      "booked": true
+    },
+    {
+      "number": 34,
+      "booked": false
+    },
+    {
+      "number": 35,
+      "booked": true
+    },
+    {
+      "number": 36,
+      "booked": false
+    },
+    {
+      "number": 37,
+      "booked": false
+    },
+    {
+      "number": 38,
+      "booked": true
+    },
+    {
+      "number": 39,
+      "booked": false
+    },
+    {
+      "number": 40,
+      "booked": false
+    },
+    {
+      "number": 41,
+      "booked": false
+    },
+    {
+      "number": 42,
+      "booked": false
+    },
+    {
+      "number": 43,
+      "booked": false
+    },
+    {
+      "number": 44,
+      "booked": false
+    },
+    {
+      "number": 45,
+      "booked": false
+    },
+    {
+      "number": 46,
+      "booked": false
+    },
+    {
+      "number": 47,
+      "booked": false
+    },
+    {
+      "number": 48,
+      "booked": false
+    },
+    {
+      "number": 49,
+      "booked": false
+    },
+    {
+      "number": 50,
+      "booked": false
+    }
+  ],
+  "price": 5,
+  "__v": 0,
+  "date": {
+    "$date": "2024-05-06T00:00:00.000Z"
+  },
+  "time": "16:00"
+},
+{
+  "_id": {
+    "$oid": "663261194439e75b0379580c"
+  },
+  "title": "The Dune",
+  "posterUrl": "https://m.media-amazon.com/images/M/MV5BMDQ0NjgyN2YtNWViNS00YjA3LTkxNDktYzFkZTExZGMxZDkxXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg",
+  "genre": "Advencure, Drama",
+  "ageRating": "PG-13",
+  "runtime": 155,
+  "director": "Denis Villeneuve",
+  "seats": [
+    {
+      "number": 1,
+      "booked": false
+    },
+    {
+      "number": 2,
+      "booked": false
+    },
+    {
+      "number": 3,
+      "booked": true
+    },
+    {
+      "number": 4,
+      "booked": true
+    },
+    {
+      "number": 5,
+      "booked": true
+    },
+    {
+      "number": 6,
+      "booked": false
+    },
+    {
+      "number": 7,
+      "booked": false
+    },
+    {
+      "number": 8,
+      "booked": false
+    },
+    {
+      "number": 9,
+      "booked": false
+    },
+    {
+      "number": 10,
+      "booked": true
+    },
+    {
+      "number": 11,
+      "booked": false
+    },
+    {
+      "number": 12,
+      "booked": false
+    },
+    {
+      "number": 13,
+      "booked": true
+    },
+    {
+      "number": 14,
+      "booked": true
+    },
+    {
+      "number": 15,
+      "booked": true
+    },
+    {
+      "number": 16,
+      "booked": true
+    },
+    {
+      "number": 17,
+      "booked": true
+    },
+    {
+      "number": 18,
+      "booked": true
+    },
+    {
+      "number": 19,
+      "booked": false
+    },
+    {
+      "number": 20,
+      "booked": true
+    },
+    {
+      "number": 21,
+      "booked": false
+    },
+    {
+      "number": 22,
+      "booked": false
+    },
+    {
+      "number": 23,
+      "booked": true
+    },
+    {
+      "number": 24,
+      "booked": false
+    },
+    {
+      "number": 25,
+      "booked": true
+    },
+    {
+      "number": 26,
+      "booked": true
+    },
+    {
+      "number": 27,
+      "booked": true
+    },
+    {
+      "number": 28,
+      "booked": true
+    },
+    {
+      "number": 29,
+      "booked": false
+    },
+    {
+      "number": 30,
+      "booked": true
+    },
+    {
+      "number": 31,
+      "booked": false
+    },
+    {
+      "number": 32,
+      "booked": false
+    },
+    {
+      "number": 33,
+      "booked": true
+    },
+    {
+      "number": 34,
+      "booked": true
+    },
+    {
+      "number": 35,
+      "booked": false
+    },
+    {
+      "number": 36,
+      "booked": false
+    },
+    {
+      "number": 37,
+      "booked": false
+    },
+    {
+      "number": 38,
+      "booked": false
+    },
+    {
+      "number": 39,
+      "booked": false
+    },
+    {
+      "number": 40,
+      "booked": true
+    },
+    {
+      "number": 41,
+      "booked": false
+    },
+    {
+      "number": 42,
+      "booked": false
+    },
+    {
+      "number": 43,
+      "booked": true
+    },
+    {
+      "number": 44,
+      "booked": true
+    },
+    {
+      "number": 45,
+      "booked": false
+    },
+    {
+      "number": 46,
+      "booked": false
+    },
+    {
+      "number": 47,
+      "booked": false
+    },
+    {
+      "number": 48,
+      "booked": false
+    },
+    {
+      "number": 49,
+      "booked": false
+    },
+    {
+      "number": 50,
+      "booked": true
+    }
+  ],
+  "date": {
+    "$date": "2024-05-06T00:00:00.000Z"
+  },
+  "time": "19:00",
+  "price": 5
+},
+{
+  "_id": {
+    "$oid": "663261194439e75b0379580d"
+  },
+  "title": "Inception",
+  "posterUrl": "https://m.media-amazon.com/images/I/71DwIcSgFcS.jpg",
+  "genre": "Action",
+  "ageRating": "PG-13",
+  "runtime": 148,
+  "director": "Christopher Nolan",
+  "seats": [
+    {
+      "number": 1,
+      "booked": false
+    },
+    {
+      "number": 2,
+      "booked": false
+    },
+    {
+      "number": 3,
+      "booked": false
+    },
+    {
+      "number": 4,
+      "booked": false
+    },
+    {
+      "number": 5,
+      "booked": false
+    },
+    {
+      "number": 6,
+      "booked": false
+    },
+    {
+      "number": 7,
+      "booked": false
+    },
+    {
+      "number": 8,
+      "booked": false
+    },
+    {
+      "number": 9,
+      "booked": false
+    },
+    {
+      "number": 10,
+      "booked": false
+    },
+    {
+      "number": 11,
+      "booked": false
+    },
+    {
+      "number": 12,
+      "booked": false
+    },
+    {
+      "number": 13,
+      "booked": false
+    },
+    {
+      "number": 14,
+      "booked": false
+    },
+    {
+      "number": 15,
+      "booked": false
+    },
+    {
+      "number": 16,
+      "booked": false
+    },
+    {
+      "number": 17,
+      "booked": false
+    },
+    {
+      "number": 18,
+      "booked": false
+    },
+    {
+      "number": 19,
+      "booked": false
+    },
+    {
+      "number": 20,
+      "booked": false
+    },
+    {
+      "number": 21,
+      "booked": false
+    },
+    {
+      "number": 22,
+      "booked": false
+    },
+    {
+      "number": 23,
+      "booked": false
+    },
+    {
+      "number": 24,
+      "booked": false
+    },
+    {
+      "number": 25,
+      "booked": false
+    },
+    {
+      "number": 26,
+      "booked": false
+    },
+    {
+      "number": 27,
+      "booked": false
+    },
+    {
+      "number": 28,
+      "booked": false
+    },
+    {
+      "number": 29,
+      "booked": false
+    },
+    {
+      "number": 30,
+      "booked": false
+    },
+    {
+      "number": 31,
+      "booked": false
+    },
+    {
+      "number": 32,
+      "booked": false
+    },
+    {
+      "number": 33,
+      "booked": false
+    },
+    {
+      "number": 34,
+      "booked": false
+    },
+    {
+      "number": 35,
+      "booked": false
+    },
+    {
+      "number": 36,
+      "booked": false
+    },
+    {
+      "number": 37,
+      "booked": false
+    },
+    {
+      "number": 38,
+      "booked": false
+    },
+    {
+      "number": 39,
+      "booked": false
+    },
+    {
+      "number": 40,
+      "booked": false
+    },
+    {
+      "number": 41,
+      "booked": false
+    },
+    {
+      "number": 42,
+      "booked": false
+    },
+    {
+      "number": 43,
+      "booked": false
+    },
+    {
+      "number": 44,
+      "booked": false
+    },
+    {
+      "number": 45,
+      "booked": false
+    },
+    {
+      "number": 46,
+      "booked": false
+    },
+    {
+      "number": 47,
+      "booked": false
+    },
+    {
+      "number": 48,
+      "booked": false
+    },
+    {
+      "number": 49,
+      "booked": false
+    },
+    {
+      "number": 50,
+      "booked": false
+    }
+  ],
+  "date": {
+    "$date": "2024-05-06T00:00:00.000Z"
+  },
+  "time": "21:00",
+  "price": 15
+},
+{
+  "_id": {
+    "$oid": "663261194439e75b0379580e"
+  },
+  "title": "The Godfather",
+  "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3hp5hCConEtziRDZN6z_BF6zrW8pq4CUxvxtuuAkQxw&s",
+  "genre": "Crime",
+  "ageRating": "R",
+  "runtime": 175,
+  "director": "Francis Ford Coppola",
+  "seats": [
+    {
+      "number": 1,
+      "booked": false
+    },
+    {
+      "number": 2,
+      "booked": false
+    },
+    {
+      "number": 3,
+      "booked": false
+    },
+    {
+      "number": 4,
+      "booked": false
+    },
+    {
+      "number": 5,
+      "booked": false
+    },
+    {
+      "number": 6,
+      "booked": false
+    },
+    {
+      "number": 7,
+      "booked": false
+    },
+    {
+      "number": 8,
+      "booked": false
+    },
+    {
+      "number": 9,
+      "booked": false
+    },
+    {
+      "number": 10,
+      "booked": false
+    },
+    {
+      "number": 11,
+      "booked": false
+    },
+    {
+      "number": 12,
+      "booked": false
+    },
+    {
+      "number": 13,
+      "booked": false
+    },
+    {
+      "number": 14,
+      "booked": false
+    },
+    {
+      "number": 15,
+      "booked": false
+    },
+    {
+      "number": 16,
+      "booked": false
+    },
+    {
+      "number": 17,
+      "booked": false
+    },
+    {
+      "number": 18,
+      "booked": false
+    },
+    {
+      "number": 19,
+      "booked": false
+    },
+    {
+      "number": 20,
+      "booked": false
+    },
+    {
+      "number": 21,
+      "booked": false
+    },
+    {
+      "number": 22,
+      "booked": false
+    },
+    {
+      "number": 23,
+      "booked": false
+    },
+    {
+      "number": 24,
+      "booked": false
+    },
+    {
+      "number": 25,
+      "booked": false
+    },
+    {
+      "number": 26,
+      "booked": false
+    },
+    {
+      "number": 27,
+      "booked": false
+    },
+    {
+      "number": 28,
+      "booked": false
+    },
+    {
+      "number": 29,
+      "booked": false
+    },
+    {
+      "number": 30,
+      "booked": false
+    },
+    {
+      "number": 31,
+      "booked": false
+    },
+    {
+      "number": 32,
+      "booked": false
+    },
+    {
+      "number": 33,
+      "booked": false
+    },
+    {
+      "number": 34,
+      "booked": false
+    },
+    {
+      "number": 35,
+      "booked": false
+    },
+    {
+      "number": 36,
+      "booked": false
+    },
+    {
+      "number": 37,
+      "booked": false
+    },
+    {
+      "number": 38,
+      "booked": false
+    },
+    {
+      "number": 39,
+      "booked": false
+    },
+    {
+      "number": 40,
+      "booked": false
+    },
+    {
+      "number": 41,
+      "booked": false
+    },
+    {
+      "number": 42,
+      "booked": false
+    },
+    {
+      "number": 43,
+      "booked": false
+    },
+    {
+      "number": 44,
+      "booked": false
+    },
+    {
+      "number": 45,
+      "booked": false
+    },
+    {
+      "number": 46,
+      "booked": false
+    },
+    {
+      "number": 47,
+      "booked": false
+    },
+    {
+      "number": 48,
+      "booked": false
+    },
+    {
+      "number": 49,
+      "booked": false
+    },
+    {
+      "number": 50,
+      "booked": false
+    }
+  ],
+  "date": {
+    "$date": "2024-05-08T00:00:00.000Z"
+  },
+  "time": "20:30",
+  "price": 6
+},
+{
+  "_id": {
+    "$oid": "663261194439e75b0379580f"
+  },
+  "title": "Pulp Fiction",
+  "posterUrl": "https://cdn.europosters.eu/image/750/poster/pulp-fiction-one-sheet-i4435.jpg",
+  "genre": "Crime",
+  "ageRating": "R",
+  "runtime": 154,
+  "director": "Quentin Tarantino",
+  "seats": [
+    {
+      "number": 1,
+      "booked": false
+    },
+    {
+      "number": 2,
+      "booked": false
+    },
+    {
+      "number": 3,
+      "booked": false
+    },
+    {
+      "number": 4,
+      "booked": false
+    },
+    {
+      "number": 5,
+      "booked": false
+    },
+    {
+      "number": 6,
+      "booked": false
+    },
+    {
+      "number": 7,
+      "booked": false
+    },
+    {
+      "number": 8,
+      "booked": false
+    },
+    {
+      "number": 9,
+      "booked": false
+    },
+    {
+      "number": 10,
+      "booked": false
+    },
+    {
+      "number": 11,
+      "booked": false
+    },
+    {
+      "number": 12,
+      "booked": false
+    },
+    {
+      "number": 13,
+      "booked": false
+    },
+    {
+      "number": 14,
+      "booked": false
+    },
+    {
+      "number": 15,
+      "booked": false
+    },
+    {
+      "number": 16,
+      "booked": false
+    },
+    {
+      "number": 17,
+      "booked": false
+    },
+    {
+      "number": 18,
+      "booked": false
+    },
+    {
+      "number": 19,
+      "booked": false
+    },
+    {
+      "number": 20,
+      "booked": false
+    },
+    {
+      "number": 21,
+      "booked": false
+    },
+    {
+      "number": 22,
+      "booked": false
+    },
+    {
+      "number": 23,
+      "booked": false
+    },
+    {
+      "number": 24,
+      "booked": false
+    },
+    {
+      "number": 25,
+      "booked": false
+    },
+    {
+      "number": 26,
+      "booked": false
+    },
+    {
+      "number": 27,
+      "booked": false
+    },
+    {
+      "number": 28,
+      "booked": false
+    },
+    {
+      "number": 29,
+      "booked": false
+    },
+    {
+      "number": 30,
+      "booked": false
+    },
+    {
+      "number": 31,
+      "booked": false
+    },
+    {
+      "number": 32,
+      "booked": false
+    },
+    {
+      "number": 33,
+      "booked": false
+    },
+    {
+      "number": 34,
+      "booked": false
+    },
+    {
+      "number": 35,
+      "booked": false
+    },
+    {
+      "number": 36,
+      "booked": false
+    },
+    {
+      "number": 37,
+      "booked": false
+    },
+    {
+      "number": 38,
+      "booked": false
+    },
+    {
+      "number": 39,
+      "booked": false
+    },
+    {
+      "number": 40,
+      "booked": false
+    },
+    {
+      "number": 41,
+      "booked": false
+    },
+    {
+      "number": 42,
+      "booked": false
+    },
+    {
+      "number": 43,
+      "booked": false
+    },
+    {
+      "number": 44,
+      "booked": false
+    },
+    {
+      "number": 45,
+      "booked": false
+    },
+    {
+      "number": 46,
+      "booked": false
+    },
+    {
+      "number": 47,
+      "booked": false
+    },
+    {
+      "number": 48,
+      "booked": false
+    },
+    {
+      "number": 49,
+      "booked": false
+    },
+    {
+      "number": 50,
+      "booked": false
+    }
+  ],
+  "date": {
+    "$date": "2024-05-08T00:00:00.000Z"
+  },
+  "time": "22:15",
+  "price": 12
+},
+{
+  "_id": {
+    "$oid": "663261194439e75b03795810"
+  },
+  "title": "Forrest Gump",
+  "posterUrl": "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+  "genre": "Drama",
+  "ageRating": "PG-13",
+  "runtime": 142,
+  "director": "Robert Zemeckis",
+  "seats": [
+    {
+      "number": 1,
+      "booked": false
+    },
+    {
+      "number": 2,
+      "booked": false
+    },
+    {
+      "number": 3,
+      "booked": false
+    },
+    {
+      "number": 4,
+      "booked": false
+    },
+    {
+      "number": 5,
+      "booked": false
+    },
+    {
+      "number": 6,
+      "booked": false
+    },
+    {
+      "number": 7,
+      "booked": false
+    },
+    {
+      "number": 8,
+      "booked": false
+    },
+    {
+      "number": 9,
+      "booked": false
+    },
+    {
+      "number": 10,
+      "booked": false
+    },
+    {
+      "number": 11,
+      "booked": false
+    },
+    {
+      "number": 12,
+      "booked": false
+    },
+    {
+      "number": 13,
+      "booked": false
+    },
+    {
+      "number": 14,
+      "booked": false
+    },
+    {
+      "number": 15,
+      "booked": false
+    },
+    {
+      "number": 16,
+      "booked": false
+    },
+    {
+      "number": 17,
+      "booked": false
+    },
+    {
+      "number": 18,
+      "booked": false
+    },
+    {
+      "number": 19,
+      "booked": false
+    },
+    {
+      "number": 20,
+      "booked": false
+    },
+    {
+      "number": 21,
+      "booked": false
+    },
+    {
+      "number": 22,
+      "booked": false
+    },
+    {
+      "number": 23,
+      "booked": false
+    },
+    {
+      "number": 24,
+      "booked": false
+    },
+    {
+      "number": 25,
+      "booked": false
+    },
+    {
+      "number": 26,
+      "booked": false
+    },
+    {
+      "number": 27,
+      "booked": false
+    },
+    {
+      "number": 28,
+      "booked": false
+    },
+    {
+      "number": 29,
+      "booked": false
+    },
+    {
+      "number": 30,
+      "booked": false
+    },
+    {
+      "number": 31,
+      "booked": false
+    },
+    {
+      "number": 32,
+      "booked": false
+    },
+    {
+      "number": 33,
+      "booked": false
+    },
+    {
+      "number": 34,
+      "booked": false
+    },
+    {
+      "number": 35,
+      "booked": false
+    },
+    {
+      "number": 36,
+      "booked": false
+    },
+    {
+      "number": 37,
+      "booked": false
+    },
+    {
+      "number": 38,
+      "booked": false
+    },
+    {
+      "number": 39,
+      "booked": false
+    },
+    {
+      "number": 40,
+      "booked": false
+    },
+    {
+      "number": 41,
+      "booked": false
+    },
+    {
+      "number": 42,
+      "booked": false
+    },
+    {
+      "number": 43,
+      "booked": false
+    },
+    {
+      "number": 44,
+      "booked": false
+    },
+    {
+      "number": 45,
+      "booked": false
+    },
+    {
+      "number": 46,
+      "booked": false
+    },
+    {
+      "number": 47,
+      "booked": false
+    },
+    {
+      "number": 48,
+      "booked": false
+    },
+    {
+      "number": 49,
+      "booked": false
+    },
+    {
+      "number": 50,
+      "booked": false
+    }
+  ],
+  "date": {
+    "$date": "2024-05-10T00:00:00.000Z"
+  },
+  "time": "18:45",
+  "price": 10
+}]

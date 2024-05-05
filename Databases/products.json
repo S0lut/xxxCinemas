@@ -1,0 +1,140 @@
+[{
+  "_id": {
+    "$oid": "663269a56d1a7e56327e08d7"
+  },
+  "title": "Popcorn",
+  "desc": "Delicious popcorn perfect for movie nights\t",
+  "img": "https://www.recipetineats.com/wp-content/uploads/2020/11/Slightly-sweet-and-salty-popcorn_square.jpg",
+  "size": "Large",
+  "flavour": "Butter",
+  "price": 6,
+  "type": "food",
+  "updatedAt": {
+    "$date": "2024-05-01T16:17:29.970Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "663269a56d1a7e56327e08d8"
+  },
+  "title": "Nachos",
+  "desc": "Crunchy nachos with cheese sauce and jalapenos",
+  "img": "https://iambaker.net/wp-content/uploads/2019/07/chili-cheese-nacho-final.jpg",
+  "size": "Regular",
+  "flavour": "Cheese",
+  "price": 8,
+  "type": "food"
+},
+{
+  "_id": {
+    "$oid": "663269a56d1a7e56327e08d9"
+  },
+  "title": "Hot Dog",
+  "desc": "Classic hot dog with mustard and ketchup",
+  "img": "https://www.brit.co/media-library/gourmet-hot-dogs.png?id=33770089&width=600&height=600&quality=90&coordinates=0%2C176%2C0%2C164",
+  "size": "Regular",
+  "flavour": "Classic",
+  "price": 6,
+  "type": "food"
+},
+{
+  "_id": {
+    "$oid": "663269a56d1a7e56327e08da"
+  },
+  "title": "Chicken Wings",
+  "desc": "\"Fiery, crispy chicken wings that pack a punch!\"",
+  "img": "https://hips.hearstapps.com/hmg-prod/images/air-fryer-chicken-wings-lead-65b9452e239b8.jpg",
+  "size": "Large",
+  "flavour": "Spicy",
+  "price": 10,
+  "type": "food"
+},
+{
+  "_id": {
+    "$oid": "663269a56d1a7e56327e08db"
+  },
+  "title": "Pizza Slice",
+  "desc": "Freshly baked pizza slice with pepperoni",
+  "img": "https://cheatdaydesign.com/wp-content/uploads/2023/06/Cheesy-slice-of-pizza.png.webp",
+  "size": "Regular",
+  "flavour": "Pepperoni",
+  "price": 4,
+  "type": "food"
+},
+{
+  "_id": {
+    "$oid": "663269a56d1a7e56327e08dc"
+  },
+  "title": "Soda",
+  "desc": "Refreshing soda drink in various flavors",
+  "img": "https://wilkdental.com/wp-content/uploads/2019/02/Depositphotos_54232449_m-2015.jpg",
+  "size": "Medium",
+  "flavour": "Cola",
+  "price": 2,
+  "type": "beverage"
+},
+{
+  "_id": {
+    "$oid": "663269a56d1a7e56327e08dd"
+  },
+  "title": "Iced Tea",
+  "desc": "Chilled iced tea perfect for quenching your thirst",
+  "img": "https://preppykitchen.com/wp-content/uploads/2023/09/Long-Island-Iced-Tea-Recipe-Card-500x500.jpg",
+  "size": "Large",
+  "flavour": "Lemon",
+  "price": 3,
+  "type": "beverage"
+},
+{
+  "_id": {
+    "$oid": "663269a56d1a7e56327e08de"
+  },
+  "title": "Smoothie",
+  "desc": "Healthy and refreshing fruit smoothie to satisfy your thirst",
+  "img": "https://www.eatingwell.com/thmb/KCDDSEVOd4pRYoDokPJ4cUuwLxI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/EWL-57793-berry-kefir-smoothie-Hero-01-A-ae9e20c50f1843928b81c102bfa80b4c.jpg",
+  "size": "Regular",
+  "flavour": "Mixed Berry",
+  "price": 5,
+  "type": "beverage"
+},
+{
+  "_id": {
+    "$oid": "663269a56d1a7e56327e08df"
+  },
+  "title": "Milkshake",
+  "desc": "Creamy milkshake in various flavors",
+  "img": "https://bakingmischief.com/wp-content/uploads/2022/03/coffee-milkshake-square.jpg",
+  "size": "Large",
+  "flavour": "Chocolate",
+  "price": 6,
+  "type": "beverage"
+},
+{
+  "_id": {
+    "$oid": "663269a56d1a7e56327e08e0"
+  },
+  "title": "Beer",
+  "desc": "Cold and refreshing beer for an enjoyable movie experience",
+  "img": "https://townbrewery.ca/cdn/shop/files/WebsiteProductTemplate_36_f4e02497-1d6f-4320-b68b-814f214f3dc1_1500x.jpg?v=1708705816",
+  "size": "Regular",
+  "flavour": "Pale Lager",
+  "price": 7,
+  "type": "beverage"
+},
+{
+  "_id": {
+    "$oid": "663602810371bf5b6fc9a97f"
+  },
+  "title": "Cookies",
+  "desc": "Satisfy your sweet tooth with classic chocolate chip cookies.",
+  "img": "https://assets.bonappetit.com/photos/5ca534485e96521ff23b382b/1:1/w_2560%2Cc_limit/chocolate-chip-cookie.jpg",
+  "price": 5,
+  "type": "food",
+  "createdAt": {
+    "$date": "2024-05-04T09:40:17.434Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-04T09:40:17.434Z"
+  },
+  "__v": 0
+}]
